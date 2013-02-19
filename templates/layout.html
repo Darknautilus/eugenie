@@ -17,9 +17,9 @@
   <link rel="stylesheet" href="{{ css() }}/global.css" />
   <link rel="stylesheet" href="{{ css() }}/menu_tiroir.css" />
   
-  <link rel="stylesheet" href="{{ css() }}/font-awesome.min.css" />
+  <!-- <link rel="stylesheet" href="{{ fontAwesome() }}/css/font-awesome.min.css" />-->
   <!-- [if lt IE 8]>
-   <link rel="stylesheet" href="{{ css() }}/font-awesome-ie7.min.css" />
+   <link rel="stylesheet" href="{{ fontAwesome() }}/css/font-awesome-ie7.min.css" />
   <![endif] -->
   
   <style type="text/css">
@@ -43,12 +43,12 @@
   <div class="row-fluid">
     <nav class="span2">
       <ul>
-        <li><a href="#">Thés</a></li>
-        <li><a href="#">Patisseries</a></li>
-        <li><a href="#">Menus</a></li>
-        <li><a href="#">Galerie Photos</a></li>
+        <li><a href="{{ queries('index','thes',{}) }}">Thés</a></li>
+        <li><a href="{{ queries('index','patisseries',{}) }}">Patisseries</a></li>
+        <li><a href="{{ queries('index','menus',{}) }}">Menus</a></li>
+        <li><a href="{{ queries('index','galerie',{}) }}">Galerie Photos</a></li>
         <li><a href="#">Livre d'or</a></li>
-        <li><a href="#">Nous contacter</a></li>
+        <li><a href="{{ queries('index','contact',{}) }}">Nous contacter</a></li>
       </ul>
     </nav>
     <div class="span9 offset1">

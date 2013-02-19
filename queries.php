@@ -21,7 +21,12 @@ $GLOBALS["DEFAULT_ACTION"] = $DEFAULT_ACTION;
 */
 $MODULES = array(
 	"index" => array(
-		"show"
+		"show",
+	  "menus",
+	  "thes",
+	  "patisseries",
+	  "galerie",
+	  "contact"
 		)
 	);
 
