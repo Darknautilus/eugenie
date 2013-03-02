@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{ css() }}/global.css" />
   <link rel="stylesheet" href="{{ css() }}/menu_tiroir.css" />
   
-  <!-- <link rel="stylesheet" href="{{ fontAwesome() }}/css/font-awesome.min.css" />-->
+  <link rel="stylesheet" href="{{ fontAwesome() }}/css/font-awesome.min.css" />
   <!-- [if lt IE 8]>
    <link rel="stylesheet" href="{{ fontAwesome() }}/css/font-awesome-ie7.min.css" />
   <![endif] -->
@@ -35,14 +35,16 @@
 <body>
 
 <header>
+<a href="{{ queries('','',{}) }}">
 <h1>Le Salon D'Eugénie</h1>
 <p class="small">Salon de thé, glaces, patisseries</p>
+</a>
 </header>
 
-<div class="main container-fluid">
+<div id="content-row" class="main container-fluid">
   <div class="row-fluid">
     <nav class="span2">
-      <ul>
+      <ul class="side-menu">
         <li><a href="{{ queries('index','thes',{}) }}">Thés</a></li>
         <li><a href="{{ queries('index','patisseries',{}) }}">Patisseries</a></li>
         <li><a href="{{ queries('index','menus',{}) }}">Menus</a></li>
@@ -51,7 +53,7 @@
         <li><a href="{{ queries('index','contact',{}) }}">Nous contacter</a></li>
       </ul>
     </nav>
-    <div class="span9 offset1">
+    <div id="content" class="span10">
       {% block content %}
       {% endblock %}
     </div>
@@ -60,11 +62,13 @@
 </div>
 
 <footer>
-<ul>
-  <li>Mentions légales</li>
-  <li>Crédits</li>
-  <li>Connexion</li>
-</ul>
+<div class="row-fluid">
+	<ul>
+	  <li>Mentions légales</li>
+	  <li>Crédits</li>
+	  <li>Connexion</li>
+	</ul>
+</div>
 </footer>
 
 <script src="{{ templates() }}/js/jquery-1.8.3.js"></script>
