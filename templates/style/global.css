@@ -1,13 +1,36 @@
-@font-face {
-        font-family: 'English';
-        src: url('english.eot');
-        src: url('english.eot?#iefix') format('embedded-opentype'),
-             url('english.woff') format('woff'),
-             url('english.ttf') format('truetype'),
-             url('english.svg#english') format('svg');
-        font-weight: normal;
-        font-style: normal;
-    }
+@font-face
+{
+	font-family: 'English';
+  src: url('english.eot');
+  src: url('english.eot?#iefix') format('embedded-opentype'),
+        url('english.woff') format('woff'),
+        url('english.ttf') format('truetype'),
+        url('english.svg#english') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+  Défilement de photos
+*/
+.photo-slideshow
+{
+	background-color:inherit;
+	padding:0;
+}
+.photo-slideshow ul
+{
+  list-style-type:none;
+  height:100%;
+  padding:0;
+}
+.photo-slideshow li
+{
+	height:100%;
+	display:inline-block;
+}
+
+/* Blocs */
 
 html, body
 {
@@ -28,6 +51,11 @@ nav
 	font-size:2em;
 	background-color:#c6c869;
 	border-radius:5px 5px 5px 5px;
+	
+	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
+  -o-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
+  -moz-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
+  -webkit-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
 }
 nav ul
 {
@@ -46,6 +74,12 @@ nav li:last-child
 nav li:hover
 {
 	background-color:#85530F;
+	
+	box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
+  -o-box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
+  -moz-box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
+  -webkit-box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
+	
 }
 nav a
 {
@@ -71,11 +105,14 @@ header
 	color:inherit;
   padding-top:2%;
   padding-left:2%;
+  padding-right:2%;
   height:10%;
 }
 header a {
 	text-decoration:none;
 	color:inherit;
+	float:left;
+	margin-right:5%;
 }
 header a:hover {
 	color:inherit;
@@ -90,7 +127,33 @@ header .small
 {
 	font-family:English;
 	font-size:2em;
-  margin-left:1.5em;
+  margin-left:13%;
+}
+header .photo-slideshow
+{
+	color:black;
+	background-color:#c6c869;
+	height:100%;
+	width:33%;
+	float:left;
+	margin-right:5%;
+	border-radius:0px 5px 5px 0px;
+	position:relative;
+}
+header .photo-slideshow:before
+{
+	content:'';
+	width:1px;
+  height:1px;
+  border:1px solid #0c4334;
+  border-color:transparent transparent transparent #0c4334;
+  border-width:100px;
+  position:absolute;
+  top:-150px;
+}
+header #mainLogo
+{
+	float:left;
 }
 
 #content-row
@@ -104,9 +167,15 @@ header .small
 {
 	background-color:#c6c869;
 	color:#0c4334;
-	border-radius:5px 5px 5px 5px;
+	border-radius:10px 10px 10px 10px;
 	height:100%;
 	overflow:auto;
+	padding:1%;
+	
+	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
+  -o-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
+  -moz-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
+  -webkit-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
 }
 
 footer
