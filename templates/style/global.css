@@ -109,6 +109,11 @@ header .small
 	overflow:auto;
 }
 
+blockquote
+{
+	border-left: 5px solid gray;
+}
+
 footer
 {
 	float:clear;
