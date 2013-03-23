@@ -178,6 +178,12 @@ header #mainLogo
   -webkit-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
 }
 
+#content h1,h2,h3,h4
+{
+	font-family:English;
+	color: #85530F;
+}
+
 footer
 {
 	float:clear;
