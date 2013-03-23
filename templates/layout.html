@@ -40,10 +40,11 @@
     <p class="small">Salon de thé, glaces, patisseries</p>
   </a>
   <div class="photo-slideshow">
-    <ul>
+    <!-- <ul>
       <li>Image1</li>
       <li>Image2</li>
-    </ul>
+    </ul> -->
+    <img src="{{ images() }}/header_photos/{% block header_photo %}{% endblock %}" alt="Image d'en-tête" />
   </div>
 	<img src="{{ images() }}/logo/logo-poupee.png" alt="Logo Eugénie" id="mainLogo" />
 </header>
