@@ -36,7 +36,7 @@
 		return templates()."/style";
 	}
 	function images() {
-		return templates()."/images";
+		return css()."/images";
 	}
 	function bootstrap() {
 	  return templates()."/bootstrap";
