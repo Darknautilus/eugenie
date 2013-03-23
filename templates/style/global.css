@@ -144,21 +144,21 @@ header .photo-slideshow:before
 	content:'';
 	width:1px;
   height:1px;
-  border:1px solid #0c4334;
+  border:0px solid #0c4334;
   border-color:transparent transparent transparent #0c4334;
   border-width:100px;
   position:absolute;
-  top:-150px;
+  top:-140px;
 }
 header #mainLogo
 {
-	float:left;
-}
-header #mainLogo img
-{
-	margin-left:0px;
+	margin:0;
 	display:inline-block;
-	width:50%;
+	float:left;
+	width:12%;
+	position:relative;
+	top:-23px;
+	left:-30px;
 }
 
 #content-row
