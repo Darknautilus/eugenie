@@ -223,3 +223,13 @@ textarea
 {
 	background-color:#CECECE;
 }
+
+#myCarousel{
+	border-radius:10px 10px 10px 10px;
+}
+
+.table-hover tbody tr:hover > td,
+.table-hover tbody tr:hover > th {
+  background-color: #B5B576;
+}
+
