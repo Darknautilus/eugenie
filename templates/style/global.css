@@ -184,6 +184,11 @@ header #mainLogo
 	color: #85530F;
 }
 
+blockquote
+{
+	border-left: 5px solid gray;
+}
+
 footer
 {
 	float:clear;
