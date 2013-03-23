@@ -30,6 +30,10 @@ function pageCall(block, targetURL) {
 			$(block).html(ret);
 		}
 	});
+	var template_variables = $("#template_variables");
+	var title = template_variables.children("#page_title").html();
+	console.log(template_variables.html());
+	$("title").html(title);
 }
 
 
