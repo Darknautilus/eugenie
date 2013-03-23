@@ -26,7 +26,8 @@ $MODULES = array(
 	  "thes",
 	  "patisseries",
 	  "galerie",
-	  "contact"
+	  "contact",
+	  "livredor"
 		)
 	);
 
