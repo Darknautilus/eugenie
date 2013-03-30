@@ -34,8 +34,10 @@
 
 html, body
 {
-	color:#c6c869;
-  background-color:#0c4334;
+	/*color:#c6c869;*/
+  /*background-color:#0c4334;*/
+  background-color:#332714;
+  color:#B8860B;
   height:100%;
 }
 
@@ -66,10 +68,16 @@ nav ul
 nav li:first-child
 {
 	border-radius:5px 5px 0 0;
+	background:url('images/bordureHG.png') no-repeat left top,
+	 url('images/bordureHD.png') no-repeat right top;
+	background-size:15%;
 }
 nav li:last-child
 {
 	border-radius:0 0 5px 5px;
+	background:url('images/bordureBG.png') no-repeat left bottom,
+   url('images/bordureBD.png') no-repeat right bottom;
+  background-size:15%;
 }
 nav li:hover
 {
@@ -144,8 +152,10 @@ header .photo-slideshow:before
 	content:'';
 	width:1px;
   height:1px;
-  border:0px solid #0c4334;
-  border-color:transparent transparent transparent #0c4334;
+  /*border:0px solid #0c4334;
+  border-color:transparent transparent transparent #0c4334;*/
+  border:0px solid #332714;
+  border-color:transparent transparent transparent #332714;
   border-width:100px;
   position:absolute;
   top:-140px;
@@ -170,6 +180,10 @@ header #mainLogo
 }
 #content
 {
+	background:url('images/bordureHG.png') no-repeat left top,
+	 url('images/bordureHD.png') no-repeat right top,
+	 url('images/bordureBG.png') no-repeat left bottom,
+	 url('images/bordureBD.png') no-repeat right bottom;
 	background-color:#c6c869;
 	color:#0c4334;
 	border-radius:10px 10px 10px 10px;
