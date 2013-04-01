@@ -248,6 +248,11 @@ textarea
   background-color: #B5B576;
 }
 
+#intro{
+	padding:1%;
+	height: 93%;
+}
+
 #content2
 {
 	background:url('images/bordureHG.png') no-repeat left top,
@@ -257,9 +262,9 @@ textarea
 	background-color:#c6c869;
 	color:#0c4334;
 	border-radius:10px 10px 10px 10px;
-	height:93%;
+	height: 100%;
+	padding-top:20px;
 	overflow:auto;
-	padding:1%;
 	
 	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
   -o-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
@@ -273,6 +278,10 @@ textarea
 	color:#0c4334;
 	text-decoration:inherit;
 	margin-top:20px;
+}
+
+.ecriture:hover{
+	text-decoration:inherit;
 }
 
 .imageIntro{

@@ -10,7 +10,7 @@ define("DEFAULT_MODULE", "index");
 	array(module => action)
 */
 $DEFAULT_ACTION = array(
-	"index" => "show"
+	"index" => "intro"
 );
 
 $GLOBALS["DEFAULT_ACTION"] = $DEFAULT_ACTION;
@@ -21,7 +21,7 @@ $GLOBALS["DEFAULT_ACTION"] = $DEFAULT_ACTION;
 */
 $MODULES = array(
 	"index" => array(
-		"show",
+	  "show",
 	  "menus",
 	  "thes",
 	  "patisseries",
