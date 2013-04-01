@@ -165,10 +165,11 @@ header #mainLogo
 	margin:0;
 	display:inline-block;
 	float:left;
-	width:12%;
+	width:15%;
 	position:relative;
 	top:-23px;
-	left:-30px;
+	/*left:-30px;*/
+	right:-100px;
 }
 
 #content-row
@@ -247,3 +248,34 @@ textarea
   background-color: #B5B576;
 }
 
+#content2
+{
+	background:url('images/bordureHG.png') no-repeat left top,
+	 url('images/bordureHD.png') no-repeat right top,
+	 url('images/bordureBG.png') no-repeat left bottom,
+	 url('images/bordureBD.png') no-repeat right bottom;
+	background-color:#c6c869;
+	color:#0c4334;
+	border-radius:10px 10px 10px 10px;
+	height:93%;
+	overflow:auto;
+	padding:1%;
+	
+	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
+  -o-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
+  -moz-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
+  -webkit-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
+}
+
+.ecriture{
+	font-family:English;
+	font-size:4em;
+	color:#0c4334;
+	text-decoration:inherit;
+	margin-top:20px;
+}
+
+.imageIntro{
+	width:725px;
+	height:504px;
+}
