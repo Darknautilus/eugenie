@@ -61,8 +61,6 @@ nav li:last-child
 nav li:hover
 {
 	background-color:#85530F;
-	backgound:url('images/logo/logo-poupee1.png') no-repeat;
-	background-size:15%;
 	
 	box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
   -o-box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
@@ -77,11 +75,22 @@ nav a
 	text-decoration:none;
 	padding:10%;
 	padding-left:15%;
+	position:relative;
 }
 nav a:hover
 {
 	color:#c6c869;
 	text-decoration:none;
+}
+nav a:hover:after
+{
+  content:url('images/logo/logo-poupee20.png');
+  float:right;
+  position:absolute;
+  bottom:-1%;
+  right:10%;
+  width:10px;
+  height:auto;
 }
 
 .hero-unit
