@@ -7,43 +7,32 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-    
   <link rel="stylesheet" href="{{ bootstrap() }}/css/bootstrap.min.css" />
   
   <!-- Ajoute la compatibilité avec les téléphones -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="{{ bootstrap() }}/css/bootstrap-responsive.css" rel="stylesheet">
   
-  <link rel="stylesheet" href="style/global.css" />
-  <link rel="stylesheet" href="style/menu_tiroir.css" />
+  <link rel="stylesheet" href="{{ css() }}/global.css" />
+  <link rel="stylesheet" href="{{ css() }}/menu_tiroir.css" />
   
-  <link rel="stylesheet" href="fontAwesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="{{ fontAwesome() }}/css/font-awesome.min.css" />
   <!-- [if lt IE 8]>
    <link rel="stylesheet" href="{{ fontAwesome() }}/css/font-awesome-ie7.min.css" />
   <![endif] -->
   
-  <style type="text/css">
-    .main {
-      padding-top: 60px;
-      padding-bottom: 40px;
-    }
-  </style>
 </head>
 
-<body id="content2">
+<body id="intro">
+ <div id="content2">
+  <center>
 
-<center>
+    <img src="{{ images() }}/logo/CV+Eugéni..2.png" class="imageIntro"/>
+  <p >
+   <a href="{{ queries('index', 'show', {}) }}" class="ecriture"> Accéder au site </a>
+  </p>
 
-  <img src="style/images/logo/CV+Eugéni..2.png" class="imageIntro"/>
-<p >
- <a href="/index.php" class="ecriture"> Accéder au site </a>
-</p>
-
-</center>
-
-<script src="templates/js/jquery-1.8.3.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="templates/js/global.js"></script>
-
+  </center>
+</div>
 </body>
 </html>
