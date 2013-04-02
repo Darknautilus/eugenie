@@ -35,18 +35,16 @@
 <body>
 
 <header>
-  <a href="{{ queries('','',{}) }}">
+  <a href="{{ queries('','',{}) }}" id="headerTitre">
     <h1>Le Salon D'Eugénie</h1>
     <p class="small">Salon de thé, glaces, patisseries</p>
   </a>
-  <div class="photo-slideshow">
-    <!-- <ul>
-      <li>Image1</li>
-      <li>Image2</li>
-    </ul> -->
-    <img src="{{ images() }}/header_photos/{% block header_photo %}{% endblock %}" alt="Image d'en-tête" />
+  <div id="photo-slideshow">
+    {% block header_photo %}{% endblock %}
   </div>
-	<img src="{{ images() }}/logo/logo-poupee.png" alt="Logo Eugénie" id="mainLogo" />
+  <div id="mainLogo">
+	 <img src="{{ images() }}/logo/logo-poupee.png" alt="Logo Eugénie" />
+	</div>
 </header>
 
 <div id="content-row" class="main container-fluid">
