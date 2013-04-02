@@ -47,15 +47,15 @@ nav ul
 nav li:first-child
 {
 	border-radius:5px 5px 0 0;
-	background:url('images/bordureHG.png') no-repeat left top,
-	 url('images/bordureHD.png') no-repeat right top;
+	background:url('images/bordureHG.png') no-repeat +5% +20%,
+	 url('images/bordureHD.png') no-repeat +95% +20%;
 	background-size:15%;
 }
 nav li:last-child
 {
 	border-radius:0 0 5px 5px;
-	background:url('images/bordureBG.png') no-repeat left bottom,
-   url('images/bordureBD.png') no-repeat right bottom;
+	background:url('images/bordureBG.png') no-repeat +5% 90%,
+   url('images/bordureBD.png') no-repeat +95% 90%;
   background-size:15%;
 }
 nav li:hover
@@ -167,10 +167,10 @@ header #mainLogo
 }
 #content
 {
-	background:url('images/bordureHG.png') no-repeat left top,
-	 url('images/bordureHD.png') no-repeat right top,
-	 url('images/bordureBG.png') no-repeat left bottom,
-	 url('images/bordureBD.png') no-repeat right bottom;
+	background:url('images/bordureHG.png') no-repeat 1% 2%,
+	 url('images/bordureHD.png') no-repeat 99% 2%,
+	 url('images/bordureBG.png') no-repeat 1% 98%,
+	 url('images/bordureBD.png') no-repeat 99% 98%;
 	background-color:#c6c869;
 	color:#0c4334;
 	border-radius:10px 10px 10px 10px;
@@ -234,10 +234,10 @@ textarea
 
 #content2
 {
-	background:url('images/bordureHG.png') no-repeat left top,
-	 url('images/bordureHD.png') no-repeat right top,
-	 url('images/bordureBG.png') no-repeat left bottom,
-	 url('images/bordureBD.png') no-repeat right bottom;
+	background:url('images/bordureHG.png') no-repeat 1% 2%,
+   url('images/bordureHD.png') no-repeat 99% 2%,
+   url('images/bordureBG.png') no-repeat 1% 98%,
+   url('images/bordureBD.png') no-repeat 99% 98%;
 	background-color:#c6c869;
 	color:#0c4334;
 	border-radius:10px 10px 10px 10px;
