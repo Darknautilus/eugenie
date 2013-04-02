@@ -71,9 +71,3 @@ function pageCall(block, targetURL) {
     });
 });*/
 
-/*
- * Fait bouger l'image du header
- */
-$(document).ready(function() {
-	
-});
