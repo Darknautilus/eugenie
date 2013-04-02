@@ -288,3 +288,16 @@ textarea
 	width:725px;
 	height:504px;
 }
+
+
+.justifier{
+text-align:justify;
+}
+
+.centrer{
+text-align:center;
+}
+
+.prix_droite{
+	float:right;
+}

@@ -9,7 +9,7 @@ ul.gallerie li{
 
 /*permet de créer deux lignes*/ 
 
-ul.gallerie li:nth-child(4n){
+ul.gallerie li:nth-child(0n){
 	clear:left;
 }
 
