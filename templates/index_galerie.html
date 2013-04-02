@@ -16,13 +16,23 @@
 	<ul class="gallerie">
 	 {% for i in 1..19%}
 	 <li> 
-	 	<a href="#"> 
-	 		<img src="{{ images() }}/{{ i }}.jpg" alt="" /> 
-	 		 
-	 	</a> 
+	 	<a href="#{{ i }}" class="openModal"> 
+	 		<img src="{{ images() }}/{{ i }}.jpg" alt="" /> 	 
+	 	</a>
 	 </li> 
 	 {% endfor %}
 	 </ul>
+
+	{% for i in 1..19%}
+		<aside id="{{ i }}" class="modal">
+			<div>
+				<a href="#"> 
+					<img src="{{ images() }}/{{ i }}.jpg" alt="" /> 
+				</a> 
+				<a href="#close" title="Close">Close</a>
+			</div>
+		</aside>
+	{% endfor %}
 </div>
 
 {% endblock %}
