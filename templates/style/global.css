@@ -61,8 +61,8 @@ nav li:last-child
 nav li:hover
 {
 	background-color:#85530F;
-	backgound:url('images/logo/logo-poupee1.png') no-repeat right top;
-	background-size:10%;
+	backgound:url('images/logo/logo-poupee1.png') no-repeat;
+	background-size:15%;
 	
 	box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
   -o-box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
