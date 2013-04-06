@@ -144,7 +144,6 @@ header #photo-slideshow
 	background-image:url('images/header_photos/contact.jpg');
 	margin-top:2%;
 	width:40%;
-	max-height:5%;
 	padding:5%;
 	/* border-radius:100% 100% 100% 100%; */
 	border-radius: 10px 10px 10px 10px;
@@ -162,7 +161,6 @@ header #mainLogo
 {
 	display:inline-block;
 	width:15%;
-	max-height:5%;
 	margin-left:1%;
 	position:absolute;
 	top:+2%;
@@ -207,10 +205,10 @@ footer
 {
 	float:clear;
 	font-family:English;
-	font-size:1em;
+	font-size:1.5em;
 	height:5%;
 	margin:auto;
-	width:50%;
+	width:40%;
 }
 footer ul
 {
