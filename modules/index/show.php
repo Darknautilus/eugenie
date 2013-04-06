@@ -1,3 +1,3 @@
 <?php
 
-echo $twig->render("index_show.html", array("message" => "It works" ));
+echo $twig->render("index_show.html", array("async" => true ));
