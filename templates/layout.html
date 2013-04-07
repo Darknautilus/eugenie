@@ -14,13 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="{{ bootstrap() }}/css/bootstrap-responsive.css" rel="stylesheet">
   
-  <link rel="stylesheet" href="{{ css() }}/global.css" />
-  <link rel="stylesheet" href="{{ css() }}/menu_tiroir.css" />
   
   <link rel="stylesheet" href="{{ fontAwesome() }}/css/font-awesome.min.css" />
   <!-- [if lt IE 8]>
    <link rel="stylesheet" href="{{ fontAwesome() }}/css/font-awesome-ie7.min.css" />
   <![endif] -->
+  
+  <link rel="stylesheet" href="{{ css() }}/global.css" />
+  <link rel="stylesheet" href="{{ css() }}/menu_tiroir.css" />
+  <link rel="stylesheet" href="{{ css() }}/gallerie.css" />
   
   <style type="text/css">
     .main {
@@ -47,11 +49,11 @@
 	</div>
 </header>
 
-<div id="content-row" class="main container-fluid">
+<div class="main container-fluid" style="padding-top:1%;">
   <div class="row-fluid">
     <nav class="span2">
       <ul class="side-menu">
-        <li><a href="#">Acceuil</a></li>
+        <li><a href="{{ queries('index','show',{}) }}">Acceuil</a></li>
         <li><a href="{{ queries('index','thes',{}) }}">Thés</a></li>
         <li><a href="{{ queries('index','patisseries',{}) }}">Patisseries</a></li>
         <li><a href="{{ queries('index','menus',{}) }}">Menus</a></li>
@@ -60,9 +62,11 @@
         <li><a href="{{ queries('index','contact',{}) }}">Nous contacter</a></li>
       </ul>
     </nav>
-    <div id="content" class="span10">
-      {% block content %}
-      {% endblock %}
+    <div id="content-row" class="span10">
+	    <div id="content">
+	      {% block content %}
+	      {% endblock %}
+	    </div>
     </div>
   </div>
 </div>

@@ -1,3 +1,8 @@
 <?php
 
-echo $twig->render("index_show.html", array("message" => "It works" ));
+if(isset($_SERVER['HTTP_X_REQUESTED_WITH']))
+  $async = true;
+else
+  $async = false;
+
+echo $twig->render("index_show.html", array("async" => $async ));
