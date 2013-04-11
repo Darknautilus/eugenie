@@ -14,10 +14,12 @@
 
 html, body
 {
-	color:#c6c869;
-  background-color:#0c4334;
+	color:#E0E277;
+  /* background-color:#0c4334; */
+  /* background-color:#0E503E; */
   /* background-color:#332714;
   color:#B8860B; */
+  background-image:linear-gradient(to top, #6FDCAA,#0E503E 30%);
   font-size:100%;
 }
 
@@ -30,7 +32,7 @@ nav
 {
 	font-family:English;
 	font-size:2em;
-	background-color:#c6c869;
+	background-color:#E0E277;
 	border-radius:5px 5px 5px 5px;
 	
 	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
@@ -73,9 +75,11 @@ nav a
 {
 	display:block;
 	text-decoration:none;
-	padding:10%;
-	padding-left:15%;
+	padding:8%;
+	padding-left:20%;
 	position:relative;
+  line-height:0.8;
+  z-index:0;
 }
 nav a:hover
 {
@@ -91,6 +95,7 @@ nav a:hover:after
   right:10%;
   width:10px;
   height:auto;
+  z-index:-1;
 }
 
 .hero-unit
@@ -118,11 +123,12 @@ header h1
 {
   font-family:English;
   font-size:3.5em;
+  line-height:0.8;
 }
 header .small
 {
 	font-family:English;
-	font-size:1.5em;
+	font-size:1.7em;
   margin-left:13%;
 }
 
@@ -168,7 +174,7 @@ header #mainLogo
 
 #content-row
 {
-	background-color:#c6c869;
+	background-color: #E0E277;
 	padding:2%;
 	border-radius:10px 10px 10px 10px;
 	color:#0c4334;
@@ -179,6 +185,7 @@ header #mainLogo
 }
 #content
 {
+	padding-bottom:5%;
 	background:url('images/bordureHGsombre.png') no-repeat 0% 0%,
 	 url('images/bordureHDsombre.png') no-repeat 100% 0%,
 	 url('images/bordureBGsombre.png') no-repeat 0% 100%,
@@ -264,11 +271,12 @@ textarea
 }
 
 .ecriture{
+	display:block;
+	text-align:center;
 	font-family:English;
 	font-size:4em;
 	color:#0c4334;
 	text-decoration:inherit;
-	margin-top:20px;
 }
 
 .ecriture:hover{
@@ -276,8 +284,9 @@ textarea
 }
 
 .imageIntro{
-	width:725px;
-	height:504px;
+	display:block;
+	margin:auto;
+	width:48%;
 }
 
 
