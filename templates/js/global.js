@@ -35,11 +35,11 @@ function pageCall(block, targetURL) {
 
 function updateHeader() {
 	var headerImage = $("#header_image_url").html();
-	console.log(headerImage);
+	var title = $("#page_title").html();
 	var photo = $("#photo-slideshow");
-	console.log(photo.css("background-image"));
 	if(headerImage != undefined)
 		photo.css("background-image","url('"+headerImage+"')");
+	$("title").html(title);
 }
 
 $(document).ready(function() {
