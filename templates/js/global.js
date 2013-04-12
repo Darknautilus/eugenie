@@ -37,8 +37,12 @@ function updateHeader() {
 	var headerImage = $("#header_image_url").html();
 	var title = $("#page_title").html();
 	var photo = $("#photo-slideshow");
-	if(headerImage != undefined)
-		photo.css("background-image","url('"+headerImage+"')");
+	if(headerImage != undefined) {
+		photo.fadeOut("slow",function() {
+			photo.css("background-image","url('"+headerImage+"')");
+			photo.fadeIn("slow");
+		});
+	}
 	$("title").html(title);
 }
 
