@@ -28,14 +28,23 @@ function pageCall(block, targetURL) {
 		dataType:"html",
 		success:function(ret) {
 			$(block).html(ret);
+			updateHeader();
 		}
 	});
-	var template_variables = $("#template_variables");
-	var title = template_variables.children("#page_title").html();
-	console.log(template_variables.html());
-	$("title").html(title);
 }
 
+function updateHeader() {
+	var headerImage = $("#header_image_url").html();
+	console.log(headerImage);
+	var photo = $("#photo-slideshow");
+	console.log(photo.css("background-image"));
+	if(headerImage != undefined)
+		photo.css("background-image","url('"+headerImage+"')");
+}
+
+$(document).ready(function() {
+	updateHeader();
+});
 
 /*$(document).ready(function () {
     var firstLink = $(".side-menu > li:first-child > a");

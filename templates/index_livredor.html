@@ -1,8 +1,12 @@
 {% extends async ? 'async-layout.html' : 'layout.html' %}
 
-{% block title %}Menus{% endblock %}
+{% block title %}Livre d'or{% endblock %}
+
+{% block header_photo %}livre.jpg{% endblock %}
 
 {% block content %}
+
+{{ parent() }}
 
 <div class="row-fluid">
   <h1>Livre d'or</h1>
