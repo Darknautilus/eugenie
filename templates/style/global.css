@@ -159,7 +159,7 @@ header #photo-slideshow
 	/* border-radius:100% 100% 100% 100%; */
 	border-radius: 10px 10px 10px 10px;
 	
-	-moz-animation: deplacement 20s linear infinite;
+	-moz-animation: deplacement 30s linear infinite;
 	
 	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
   -o-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
