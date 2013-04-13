@@ -37,7 +37,7 @@ nav
 {
 	font-family:English;
 	font-size:2em;
-	background-color:#E0E277;
+	background-color:#DDD4B6;
 	border-radius:5px 5px 5px 5px;
 	
 	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
@@ -179,7 +179,7 @@ header #mainLogo
 
 #content-row
 {
-	background-color: #E0E277;
+	background-color: #DDD4B6;
 	padding:2%;
 	border-radius:10px 10px 10px 10px;
 	color:#0c4334;
@@ -203,6 +203,8 @@ header #mainLogo
 }
 #content h1,h2,h3
 {
+	margin-top:5%;
+	margin-bottom:5%;
 	font-family: English;
 	color: #85530F;
 	text-align: center;
