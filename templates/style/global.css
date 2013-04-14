@@ -19,8 +19,13 @@ html, body
   /* background-color:#0E503E; */
   /* background-color:#332714;
   color:#B8860B; */
-  background-image:linear-gradient(to top, #6FDCAA,#0E503E 30%);
+  background-image:linear-gradient(to top, #2F5C47,#0E503E 30%);
   font-size:100%;
+}
+
+#template_variables
+{
+	display:none;
 }
 
 a

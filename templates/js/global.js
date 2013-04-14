@@ -28,14 +28,27 @@ function pageCall(block, targetURL) {
 		dataType:"html",
 		success:function(ret) {
 			$(block).html(ret);
+			updateHeader();
 		}
 	});
-	var template_variables = $("#template_variables");
-	var title = template_variables.children("#page_title").html();
-	console.log(template_variables.html());
+}
+
+function updateHeader() {
+	var headerImage = $("#header_image_url").html();
+	var title = $("#page_title").html();
+	var photo = $("#photo-slideshow");
+	if(headerImage != undefined) {
+		photo.fadeOut("slow",function() {
+			photo.css("background-image","url('"+headerImage+"')");
+			photo.fadeIn("slow");
+		});
+	}
 	$("title").html(title);
 }
 
+$(document).ready(function() {
+	updateHeader();
+});
 
 /*$(document).ready(function () {
     var firstLink = $(".side-menu > li:first-child > a");
