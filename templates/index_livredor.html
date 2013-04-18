@@ -16,29 +16,41 @@
 
     <strong>Voici ce qu'on pense de chez nous :</strong>
 
-  	<table class="table table-hover">
-  		<thead>
-  			<th>Commentaires</th>
-  		</thead>
-  		<tbody>
-  			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Super Salon, vivement conseillé !</td></tr>
-        <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ambiance très agréable</td></tr>
-        <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bon acceuil</td></tr>
-  		</tbody>
-  	</table>
+ {% if commentaires is not empty %}
+  <table class="table table-hover">
+	<thead>
+		<th>Commentaires</th>
+	</thead>
+    {% for commentaire in commentaires %}
+      <tr><td>
+        <div class="offset1">{{ commentaire.commentaire }}</div>
+      </td></tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p><em>Il n'y a aucun groupe à afficher</em></p>
+  {% endif %}
+
   </div>
 
 <br />
   	<div class="row-fluid">
 
-      <strong>Vous êtes venus chez nous? Dites-nous ce que vous en avez pensé :</strong> <br/><br />
-    <div class="span3">
-    <textarea  rows="3">
-      Saisissez votre commentaire
-    </textarea>
-  </div>
-		<div class="span2"><br /><input type="button" class="btn" value="Envoyer votre commentaire"></div>
+      <strong>Vous �tes venus chez nous? Dites-nous ce que vous en avez pens� :</strong> <br/><br />
+    
+    
+    <form method="post" action="{{ queries('index','livredor',{}) }}" >
+	    <div class="span3 offset1">
+	    
+	    <textarea rows="3" name="commentaire"></textarea>
+	    
+	 	 </div>
+			<div class="span2"><br /><input type="submit" class="btn" value="Envoyer votre commentaire"></div>
+		
+		
+	</form>
 	</div>
+	
   </p>
 </div>
 

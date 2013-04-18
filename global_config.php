@@ -4,9 +4,9 @@
 	Base de donnees
 */
 
-define("DBSERVER", "");
-define("DBNAME", "");
-define("DBUSER", "");
+define("DBSERVER", "localhost");
+define("DBNAME", "eugenie");
+define("DBUSER", "root");
 define("DBPASSWD", "");
 
 define("DBHEADER", 'mysql:host='.DBSERVER.';dbname='.DBNAME);

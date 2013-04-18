@@ -4,4 +4,34 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']))
 else
   $async = false;
 
-echo $twig->render("index_livredor.html", array("async" => $async));
+// Variable d'erreurs
+$error="";
+
+// Création de la classe bse de donnee
+$bdd = new BDD();
+
+/*
+ * Insertion du commentaire dans la base de données en indiquant que celui-ci est non-valide
+ * 
+ */
+if(isset($_POST['commentaire'])){
+	// on verifie que le commentaire ne soit pas supérieur à 250 et inférieur à 0
+	if(strlen($_POST['commentaire']) >250 || strlen(trim($_POST['commentaire']))==0)
+		$error="Commentaire supérieur à 250 caractères ou avec 0 caractères .";
+	else{
+
+		// insertion dans la base
+		$participation = $bdd->insert("LivreOr", array("commentaire" => $_POST['commentaire'], "valide"=>0));
+	}
+}
+
+
+/*
+ * 
+ * On récupère tous les commentaires validés pour les mettre dans un tableau
+ * 
+ */
+$commentaires = $bdd->select("SELECT commentaire FROM livreor WHERE valide=1;");
+
+
+echo $twig->render("index_livredor.html", array("async" => $async, "commentaires"=>$commentaires));
