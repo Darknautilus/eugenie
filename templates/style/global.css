@@ -10,6 +10,8 @@
   font-style: normal;
 }
 
+@import url('JunicodeRegular/stylesheet.css');
+
 /* Blocs */
 
 html, body
@@ -21,6 +23,7 @@ html, body
   color:#B8860B; */
   background-image:linear-gradient(to top, #2F5C47,#0E503E 30%);
   font-size:100%;
+  font-family:JunicodeRegular;
 }
 
 #template_variables
@@ -37,7 +40,7 @@ nav
 {
 	font-family:English;
 	font-size:2em;
-	background-color:#DDD4B6;
+	background-color:#FFF7ED;
 	border-radius:5px 5px 5px 5px;
 	
 	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
@@ -179,7 +182,7 @@ header #mainLogo
 
 #content-row
 {
-	background-color: #DDD4B6;
+	background-color: #FFF7ED;
 	padding:2%;
 	border-radius:10px 10px 10px 10px;
 	color:#0c4334;
@@ -209,6 +212,12 @@ header #mainLogo
 	color: #85530F;
 	text-align: center;
 }
+#content .lettrine:first-letter
+{
+	font-weight:bold;
+	font-family:English;
+	font-size:2em;
+}
 
 blockquote
 {
@@ -220,9 +229,9 @@ footer
 	float:clear;
 	font-family:English;
 	font-size:1.5em;
-	height:5%;
+	height:10%;
 	margin:auto;
-	width:40%;
+	width:50%;
 }
 footer ul
 {
@@ -231,12 +240,48 @@ footer ul
 footer li
 {
 	display:inline-block;
+	padding-top:2%;
+	padding-bottom:2%;
+	padding-right:4%;
+	padding-left:2%;
+	position:relative;
+}
+footer li:hover
+{
+	background-image:url('images/logo/logo-poupee-transp.png');
+	background-repeat:no-repeat;
+	background-size: auto 100%;
+	background-position:center;
+	background-opacity:0.4;
+}
+footer li:after {
+    content: "";
+    background: url(http://subtlepatterns.com/patterns/bo_play_pattern.png);
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
 }
 footer li + li
 {
-	margin-left:5%;
-	padding-left:5%;
-	border-left:solid #c6c869 1px;
+}
+footer li + li:before
+{
+	content:"|";
+	position:relative;
+	left:-25%;
+}
+footer a
+{
+	color:inherit;
+}
+footer a:hover
+{
+	color:inherit;
+	text-decoration:none;
 }
 
 textarea
