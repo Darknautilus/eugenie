@@ -84,3 +84,11 @@ $(document).ready(function() {
     });
 });*/
 
+// Fonction qui permet de calculer le nombre de caractères d'un textarea
+function countAreaChars(areaName,counter,limit)
+{
+	if (areaName.value.length>limit)
+	areaName.value=areaName.value.substring(0,limit);
+	else
+	counter.value = limit - areaName.value.length;
+}
