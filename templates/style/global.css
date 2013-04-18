@@ -353,3 +353,18 @@ text-align:center;
 .prix_droite{
 	float:right;
 }
+
+
+/*
+	INTRODUCTION
+
+*/
+
+.ovale {
+    width: 200px;
+    height: 320px;
+    background: #9a4;
+    -webkit-border-radius: 100px / 160px;
+    -moz-border-radius:    100px / 160px; 
+    border-radius:         100px / 160px; 
+}
