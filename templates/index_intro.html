@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="intro">
 <head>
 	<meta charset="utf-8" />
 	
@@ -7,30 +7,22 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <link rel="stylesheet" href="{{ bootstrap() }}/css/bootstrap.min.css" />
-  
-  <!-- Ajoute la compatibilité avec les téléphones -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="{{ bootstrap() }}/css/bootstrap-responsive.css" rel="stylesheet">
   
   <link rel="stylesheet" href="{{ css() }}/global.css" />
-  <link rel="stylesheet" href="{{ css() }}/menu_tiroir.css" />
-  
-  <link rel="stylesheet" href="{{ fontAwesome() }}/css/font-awesome.min.css" />
-  <!-- [if lt IE 8]>
-   <link rel="stylesheet" href="{{ fontAwesome() }}/css/font-awesome-ie7.min.css" />
-  <![endif] -->
   
 </head>
 
-<body>
-<div id="content-row" style="margin:1%;">
- <div id="content" style="padding-top:3%;">
-		<img src="{{ images() }}/logo/CV+Eugéni..2.png" class="imageIntro"/>
-	  <a href="{{ queries('index', 'show', {}) }}" class="ecriture">Accéder au site</a>
-	  
-	  <div class="ovale"> </div>
+<body class="intro">
+<div id="content-row" class="intro">
+  <div id="content" class="intro">
+    <div class="imageIntro" position="1" main_image="{{ images() }}/logo/logoIntro.png" alt_image="{{ images() }}/facade.jpg">
+    </div>
+    <a href="{{ queries('index', 'show', {}) }}" class="ecriture">Accéder au site</a>
   </div>
 </div>
+
+<script src="{{ templates() }}/js/jquery-1.8.3.js"></script>
+<script src="{{ templates() }}/js/global.js"></script>
+
 </body>
 </html>

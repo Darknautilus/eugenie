@@ -53,6 +53,26 @@
 		return $query;
 	}
 	
+	function getFiles($dossier) {
+	  $files = array();
+	  if (is_dir($dossier)) {
+	    if ($dh = opendir($dossier)) {
+        while (($file = readdir($dh)) !== false) {
+          if(!is_dir($dossier.$file))
+            $files[] = $file;
+        }
+        closedir($dh);
+	    }
+	    else {
+	      return "Erreur ouverture";
+	    }
+	  }
+	  else {
+	    return "Dossier inconnu";
+	  }
+	  return $files;
+	}
+	
 	Twig_Autoloader::register();
 
 	$loader = new Twig_Loader_Filesystem(dirname(__FILE__).'/templates');
@@ -70,3 +90,4 @@
 	$twig->addFunction("queries", new Twig_Function_Function("queries"));
 	$twig->addFunction("bootstrap", new Twig_Function_Function("bootstrap"));
 	$twig->addFunction("fontAwesome", new Twig_Function_Function("fontAwesome"));
+	$twig->addFunction("getFiles", new Twig_Function_Function("getFiles"));

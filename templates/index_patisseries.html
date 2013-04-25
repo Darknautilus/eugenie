@@ -53,31 +53,11 @@ Vennez vite pour une dégustation !<br/>
 			<div id="myCarousel" class="carousel slide">
 			    <!-- Carousel items -->
 			    <div class="carousel-inner">
-				    <div class="active item">
-				    	<img alt="" src="{{ images() }}/7.jpg" /> 
-			        </div>
-			        <div class="item">
-				    	<img alt="" src="{{ images() }}/8.jpg" />            
-			        </div>
-			       	<div class="item">
-				    	<img alt="" src="{{ images() }}/9.jpg" /> 
-			        </div>
-			        <div class="item">
-				    	<img alt="" src="{{ images() }}/10.jpg" />            
-			        </div>
-			       
-			        <div class="item">
-				    	<img alt="" src="{{ images() }}/11.jpg" /> 
-			        </div>
-			        <div class="item">
-				    	<img alt="" src="{{ images() }}/12.jpg" />            
-			        </div>
-			        <div class="item">
-				    	<img alt="" src="{{ images() }}/13.jpg" /> 
-			        </div>
-			        <div class="item">
-				    	<img alt="" src="{{ images() }}/14.jpg" />            
-			        </div>
+				    {% for file in getFiles('templates/style/images/patisseries/') %}
+            <div class="item {% if loop.first %}active{% endif %}">
+              <img alt="" src="{{ images() }}/patisseries/{{ file }}" />            
+            </div>
+          {% endfor %}
 
 			      </div>
 			    <!-- Carousel nav -->

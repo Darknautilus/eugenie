@@ -84,7 +84,7 @@ $(document).ready(function() {
     });
 });*/
 
-// Fonction qui permet de calculer le nombre de caractères d'un textarea
+// Fonction qui permet de calculer le nombre de caractï¿½res d'un textarea
 function countAreaChars(areaName,counter,limit)
 {
 	if (areaName.value.length>limit)
@@ -92,3 +92,29 @@ function countAreaChars(areaName,counter,limit)
 	else
 	counter.value = limit - areaName.value.length;
 }
+
+// Pour le changement d'image dans l'intro
+$(document).ready(function() {
+	$(".imageIntro").click(function() {
+		if($(this).attr("position") == 1) {
+			$(this).fadeOut("slow", function() {
+				$(this).css("background-image","url('"+$(this).attr("alt_image")+"')");
+				$(this).css("background-position","15%");
+				$(this).css("background-size","150%");
+				$(this).css("-moz-animation","deplacement 30s linear infinite");
+				$(this).attr("position", 2);
+				$(this).fadeIn("slow");
+			});
+		}
+		else {
+			$(this).fadeOut("slow", function() {
+				$(this).css("background-image","url('"+$(this).attr("main_image")+"')");
+				$(this).css("background-position", "0");
+				$(this).css("background-size","100%");
+				$(this).css("-moz-animation","none");
+				$(this).attr("position", 1);
+				$(this).fadeIn("slow");
+			});
+		}
+	});
+});

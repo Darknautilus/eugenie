@@ -13,15 +13,26 @@
 @import url('JunicodeRegular/stylesheet.css');
 
 /* Blocs */
-
+/* html
+{
+	height:100%;
+}
+body
+{
+	min-height:100%;
+	padding:0;
+	margin:0;
+} */
 html, body
 {
+  color:#B8860B;
 	color:#E0E277;
-  /* background-color:#0c4334; */
-  /* background-color:#0E503E; */
-  /* background-color:#332714;
-  color:#B8860B; */
+  background-color:#0c4334;
+  background-color:#0E503E;
+  background-color:#332714;
+  background-color:#2F5C47;
   background-image:linear-gradient(to top, #2F5C47,#0E503E 30%);
+  background-repeat:no-repeat;
   font-size:100%;
   font-family:JunicodeRegular;
 }
@@ -42,6 +53,7 @@ nav
 	font-size:2em;
 	background-color:#FFF7ED;
 	border-radius:5px 5px 5px 5px;
+	margin-top:1.7%;
 	
 	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
   -o-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
@@ -298,12 +310,7 @@ textarea
   background-color: #B5B576;
 }
 
-#intro{
-	padding:1%;
-	height: 93%;
-}
-
-#content2
+/* #content2
 {
 	background:url('images/bordureHGsombre.png') no-repeat 1% 2%,
    url('images/bordureHDsombre.png') no-repeat 99% 2%,
@@ -320,26 +327,60 @@ textarea
   -o-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
   -moz-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
   -webkit-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-}
+} */
 
-.ecriture{
-	display:block;
+
+html.intro, body.intro
+{
+	height:100%;
+	margin:0;
+	padding:0;
+}
+#content-row.intro
+{
+  height:100%;
+  padding:2%;
+  margin:2%;
+}
+#content.intro
+{
+	height:100%;
+	padding:1px 0;
 	text-align:center;
+}
+.imageIntro
+{
+	position:absolute;
+	display:inline-block;
+	top:15%;
+	left:29%;
+	padding:1px 0;
+	width:40%;
+	height:55%;
+	/*width:500px;
+	height:400px; */
+	cursor:pointer;
+	background-image:url('images/logo/logoIntro.png');
+	background-repeat:no-repeat;
+	background-size:100%;
+	border-radius:100% 100% 100% 100%;
+}
+.ecriture
+{
+	display:inline-block;
+	position:absolute;
+	bottom:0;
+	left:37%;
 	font-family:English;
 	font-size:4em;
 	color:#0c4334;
 	text-decoration:inherit;
 }
-
-.ecriture:hover{
+.ecriture:hover
+{
 	text-decoration:inherit;
 }
 
-.imageIntro{
-	display:block;
-	margin:auto;
-	width:48%;
-}
 
 
 .justifier{
@@ -352,19 +393,4 @@ text-align:center;
 
 .prix_droite{
 	float:right;
-}
-
-
-/*
-	INTRODUCTION
-
-*/
-
-.ovale {
-    width: 200px;
-    height: 320px;
-    background: #9a4;
-    -webkit-border-radius: 100px / 160px;
-    -moz-border-radius:    100px / 160px; 
-    border-radius:         100px / 160px; 
 }
