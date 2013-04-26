@@ -330,21 +330,25 @@ textarea
 } */
 
 
-html.intro, body.intro
+html.intro, body.intro, #content-row.intro, #content.intro
 {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
 	height:100%;
 	margin:0;
 	padding:0;
 }
+body.intro
+{
+	padding:2%;
+}
 #content-row.intro
 {
-  height:100%;
   padding:2%;
-  margin:2%;
+  /*margin:2%;*/
 }
 #content.intro
 {
-	height:100%;
 	padding:1px 0;
 	text-align:center;
 }
@@ -357,8 +361,6 @@ html.intro, body.intro
 	padding:1px 0;
 	width:40%;
 	height:55%;
-	/*width:500px;
-	height:400px; */
 	cursor:pointer;
 	background-image:url('images/logo/logoIntro.png');
 	background-repeat:no-repeat;
@@ -369,7 +371,7 @@ html.intro, body.intro
 {
 	display:inline-block;
 	position:absolute;
-	bottom:0;
+	bottom:10%;
 	left:37%;
 	font-family:English;
 	font-size:4em;
