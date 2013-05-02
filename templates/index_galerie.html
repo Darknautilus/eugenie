@@ -13,25 +13,81 @@
 	<div class="row-fluid span10 offset1">
 		
 		<ul class="gallerie">
-		 {% for i in 1..19%}
+		  {% set photosGalerie = getFiles('templates/style/images/galerie/') %}
+		  {% set photosThes = getFiles('templates/style/images/thes/') %}
+		  {% set photosMenus = getFiles('templates/style/images/menus/') %}
+		  {% set photosPatisseries = getFiles('templates/style/images/patisseries/') %}
+		  
+		 {% for file in photosGalerie %}
 		 <li> 
-		 	<a href="#{{ i }}" class="openModal"> 
-		 		<img src="{{ images() }}/{{ i }}.jpg" alt="" /> 	 
+		 	<a href="#{{ file }}" class="openModal"> 
+		 		<img src="{{ images() }}/galerie/reduced/{{ file }}" alt="" /> 	 
 		 	</a>
 		 </li> 
 		 {% endfor %}
-		 </ul>
+		 {% for file in photosThes %}
+     <li> 
+      <a href="#{{ file }}" class="openModal"> 
+        <img src="{{ images() }}/thes/{{ file }}" alt="" />   
+      </a>
+     </li> 
+     {% endfor %}
+     {% for file in photosMenus %}
+     <li> 
+      <a href="#{{ file }}" class="openModal"> 
+        <img src="{{ images() }}/menus/{{ file }}" alt="" />   
+      </a>
+     </li> 
+     {% endfor %}
+     {% for file in photosPatisseries %}
+     <li> 
+      <a href="#{{ file }}" class="openModal"> 
+        <img src="{{ images() }}/patisseries/{{ file }}" alt="" />   
+      </a>
+     </li> 
+     {% endfor %}
+	 </ul>
+	 {% for file in photosGalerie %}
+		<aside id="{{ file }}" class="modal">
+			<div>
+				<a href="#"> 
+					<img src="{{ images() }}/galerie/{{ file }}" alt="" /> 
+				</a> 
+				<a href="#close" title="Close">Close</a>
+			</div>
+		</aside>
+	{% endfor %}
+	{% for file in photosThes %}
+    <aside id="{{ file }}" class="modal">
+      <div>
+        <a href="#"> 
+          <img src="{{ images() }}/thes/{{ file }}" alt="" /> 
+        </a> 
+        <a href="#close" title="Close">Close</a>
+      </div>
+    </aside>
+  {% endfor %}
+  {% for file in photosMenus %}
+    <aside id="{{ file }}" class="modal">
+      <div>
+        <a href="#"> 
+          <img src="{{ images() }}/menus/{{ file }}" alt="" /> 
+        </a> 
+        <a href="#close" title="Close">Close</a>
+      </div>
+    </aside>
+  {% endfor %}
+  {% for file in photosPatisseries %}
+    <aside id="{{ file }}" class="modal">
+      <div>
+        <a href="#"> 
+          <img src="{{ images() }}/patisseries/{{ file }}" alt="" /> 
+        </a> 
+        <a href="#close" title="Close">Close</a>
+      </div>
+    </aside>
+  {% endfor %}
 	
-		{% for i in 1..19%}
-			<aside id="{{ i }}" class="modal">
-				<div>
-					<a href="#"> 
-						<img src="{{ images() }}/{{ i }}.jpg" alt="" /> 
-					</a> 
-					<a href="#close" title="Close">Close</a>
-				</div>
-			</aside>
-		{% endfor %}
 	</div>
 </div>
 {% endblock %}
