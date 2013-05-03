@@ -53,6 +53,10 @@
 		return $query;
 	}
 	
+	function isLogged() {
+		return $GLOBALS["logged"];
+	}
+	
 	Twig_Autoloader::register();
 
 	$loader = new Twig_Loader_Filesystem(dirname(__FILE__).'/templates');

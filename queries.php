@@ -29,7 +29,11 @@ $MODULES = array(
 	  "contact",
 	  "livredor",
 	  "visite"
-		)
+		),
+	
+	  "administrateur" => array(
+	  		"connexion"
+	  	)
 	);
 
 $GLOBALS["MODULES"] = $MODULES;
@@ -39,6 +43,7 @@ $GLOBALS["MODULES"] = $MODULES;
 	array(module => nom_fichier)
 */
 $MODULES_CONFIG = array(
+		"administrateur" => "config"
 );
 
 $GLOBALS["MODULES_CONFIG"] = $MODULES_CONFIG;

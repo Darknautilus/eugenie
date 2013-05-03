@@ -21,7 +21,8 @@ if(isset($_POST["filled"]) && !isLogged()) {
 	if(empty($errors)) {
 		// On teste la présence de l'email dans la base
 		$bdd = new BDD();
-		$membre = $bdd->select("SELECT membid, membmail, membfirstname, memblastname,membpasswd,admin FROM Members WHERE membmail='".$_POST["email"]."';");
+		
+		$membre = $bdd->select('select * from administrateur where identifiant="'.$values["email"].'";');
 		$bdd->close();
 
 		if(!$membre) {
@@ -29,7 +30,7 @@ if(isset($_POST["filled"]) && !isLogged()) {
 		}
 		else {
 			// On controle le mot de passe
-			if(!check_password($_POST["mdp"], $membre[0]["membpasswd"])) {
+			if(!check_password($_POST["mdp"], $membre[0]["mdp"])) {
 				$errors[] = "Le mot de passe est incorrect";
 			}
 		}
@@ -56,4 +57,4 @@ if(isset($_POST["filled"]) && !isLogged()) {
 if($redirect)
 	echo $twig->render("index_show.html", array());
 else
-	echo $twig->render("membres_connexion.html", array("values" => $values, "errors" =>  $errors));
+	echo $twig->render("administrateur_connexion.html", array("values" => $values, "errors" =>  $errors));
