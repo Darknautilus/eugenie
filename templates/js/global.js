@@ -2,19 +2,21 @@
 /*
  * Permet de changer de page
  */
-window.onpopstate = function(e) {
-	if(e.state) {
+History.Adapter.bind(window, "statechange", function() {
+	$("#content").slideUp("slow", function() {
 		pageCall("#content",document.location);
-	}
-};
+		$("#content").show("slow");
+	});
+});
 
 $(document).ready(function() {
 	$(".side-menu a").click(function() {
+		var History = window.History;
 		var link = $(this);
 		var curURL = document.URL;
 		$("#content").slideUp("slow", function() {
-			history.pushState({'path':curURL},'',link.attr("href"));
 			pageCall("#content",link.attr("href"));
+			History.pushState({'path':curURL},'',link.attr("href"));
 			$("#content").show("slow");
 		});
 		return false;

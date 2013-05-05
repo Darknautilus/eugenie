@@ -56,9 +56,6 @@ nav
 	margin-top:1.7%;
 	
 	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -o-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -moz-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -webkit-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
 }
 nav ul
 {
@@ -85,9 +82,6 @@ nav li:hover
 	background-color:#85530F;
 	
 	box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
-  -o-box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
-  -moz-box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
-  -webkit-box-shadow:1px 0px 4px 1px rgba(0,0,0,0.5) inset;
 	
 }
 
@@ -152,7 +146,18 @@ header .small
   margin-left:13%;
 }
 
-@-moz-keyframes deplacement {
+@-webkit-keyframes deplacement {
+  from {background-position: 0 0;}
+  10% {background-position: 100% 0;}
+  20% {background-position: 100% 50%}
+  30% {background-position: 0 50%;}
+  40% {background-position: 0 100%;}
+  50% {background-position: 100% 100%;}
+  66% {background-position: 100% 50%;}
+  82% {background-position: 0 50%;}
+  to {background-position: 0 0;}
+}
+@keyframes deplacement {
   from {background-position: 0 0;}
   10% {background-position: 100% 0;}
   20% {background-position: 100% 50%}
@@ -174,12 +179,10 @@ header #photo-slideshow
 	/* border-radius:100% 100% 100% 100%; */
 	border-radius: 10px 10px 10px 10px;
 	
-	-moz-animation: deplacement 30s linear infinite;
+	-webkit-animation: deplacement 30s linear infinite;
+	animation: deplacement 30s linear infinite;
 	
 	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -o-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -moz-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -webkit-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
 	
 }
 
@@ -198,10 +201,8 @@ header #mainLogo
 	padding:2%;
 	border-radius:10px 10px 10px 10px;
 	color:#0c4334;
+	
 	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -o-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -moz-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -webkit-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
 }
 #content
 {
@@ -311,30 +312,12 @@ textarea
   background-color: #B5B576;
 }
 
-/* #content2
-{
-	background:url('images/bordureHGsombre.png') no-repeat 1% 2%,
-   url('images/bordureHDsombre.png') no-repeat 99% 2%,
-   url('images/bordureBGsombre.png') no-repeat 1% 98%,
-   url('images/bordureBDsombre.png') no-repeat 99% 98%;
-	background-color:#c6c869;
-	color:#0c4334;
-	border-radius:10px 10px 10px 10px;
-	height: 100%;
-	padding-top:20px;
-	overflow:hidden;
-	
-	box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -o-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -moz-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-  -webkit-box-shadow:1px 1px 4px 1px rgba(0,0,0,0.5) inset;
-} */
-
 
 html.intro, body.intro, #content-row.intro, #content.intro
 {
-	box-sizing:border-box;
 	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	
 	height:100%;
 	margin:0;
 	padding:0;
