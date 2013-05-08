@@ -3,8 +3,9 @@
  * Permet de changer de page
  */
 History.Adapter.bind(window, "statechange", function() {
+	var state = History.getState();
 	$("#content").slideUp("slow", function() {
-		pageCall("#content",document.location);
+		pageCall("#content",state.url);
 		$("#content").show("slow");
 	});
 });
@@ -14,11 +15,7 @@ $(document).ready(function() {
 		var History = window.History;
 		var link = $(this);
 		var curURL = document.URL;
-		$("#content").slideUp("slow", function() {
-			pageCall("#content",link.attr("href"));
-			History.pushState({'path':curURL},'',link.attr("href"));
-			$("#content").show("slow");
-		});
+		History.pushState({'path':curURL},'',link.attr("href"));
 		return false;
 	});
 });
@@ -102,7 +99,8 @@ $(document).ready(function() {
 			$(this).fadeOut("slow", function() {
 				$(this).css("background-image","url('"+$(this).attr("alt_image")+"')");
 				$(this).css("background-size","150%");
-				$(this).css("-moz-animation","deplacement 30s linear infinite");
+				$(this).css("-webkit-animation","deplacement 30s linear infinite");
+				$(this).css("animation","deplacement 30s linear infinite");
 				$(this).attr("position", 2);
 				$(this).fadeIn("slow");
 			});
@@ -111,7 +109,8 @@ $(document).ready(function() {
 			$(this).fadeOut("slow", function() {
 				$(this).css("background-image","url('"+$(this).attr("main_image")+"')");
 				$(this).css("background-size","100%");
-				$(this).css("-moz-animation","none");
+				$(this).css("-webkit-animation","none");
+				$(this).css("animation","none");
 				$(this).attr("position", 1);
 				$(this).fadeIn("slow");
 			});
