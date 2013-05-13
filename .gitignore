@@ -2,3 +2,4 @@
 *.project
 *.settings
 *.directory
+global_config.php
