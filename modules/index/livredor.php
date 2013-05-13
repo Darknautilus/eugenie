@@ -7,21 +7,20 @@ else
 // Variable d'erreurs
 $errors= array();
 
-// Création de la classe bse de donnee
+// Crï¿½ation de la classe bse de donnee
 $bdd = new BDD();
 
 /*
- * Insertion du commentaire dans la base de données en indiquant que celui-ci est non-valide
+ * Insertion du commentaire dans la base de donnï¿½es en indiquant que celui-ci est non-valide
  * 
  */
 if(isset($_POST['commentaire'])){
-	// on verifie que le commentaire ne soit pas supérieur à 250 et inférieur à 0
+	// on verifie que le commentaire ne soit pas supï¿½rieur ï¿½ 250 et infï¿½rieur ï¿½ 0
 	if(strlen($_POST['commentaire']) >250 || strlen(trim($_POST['commentaire']))==0)
-		$errors[]="Commentaire supérieur à 250 caractères ou avec 0 caractères .";
+		$errors[]="Commentaire supï¿½rieur ï¿½ 250 caractï¿½res ou avec 0 caractï¿½res .";
 	else{
-
 		// insertion dans la base
-		$participation = $bdd->insert("LivreOr", array("commentaire" => $_POST['commentaire'], "valide"=>0));
+		$participation = $bdd->insert("livreOr", array("commentaire" => $_POST['commentaire'], "valide"=>0));
 		if(!$participation) {
 			$errors[] = "Erreur insertion : LivreOr";
 		}
@@ -31,7 +30,7 @@ if(isset($_POST['commentaire'])){
 
 /*
  * 
- * On récupère tous les commentaires validés pour les mettre dans un tableau
+ * On rï¿½cupï¿½re tous les commentaires validï¿½s pour les mettre dans un tableau
  * 
  */
 $commentaires = $bdd->select("SELECT commentaire FROM livreor WHERE valide=1;");

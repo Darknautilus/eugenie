@@ -50,7 +50,7 @@ if(isset($_POST["filled"]) && !isLogged()) {
 
 		// On redirige
 		//$redirect = true;
-		header("Location:".queries("", "", array()));
+		header("Location:".queries("administrateur", "menu", array()));
 	}
 }
 

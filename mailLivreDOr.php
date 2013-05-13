@@ -1,8 +1,8 @@
 <?php
 /*
  * 
- * 	Script qui permet d'envoyer un mail dans le cas où de nouveaux commentaires ont été ajouté
- * dans la base et que ceux-ci ne sont pas encore validés par l'administrateur.
+ * 	Script qui permet d'envoyer un mail dans le cas oï¿½ de nouveaux commentaires ont ï¿½tï¿½ ajoutï¿½
+ * dans la base et que ceux-ci ne sont pas encore validï¿½s par l'administrateur.
  * 
  * 
  * ATTENTION MANQUE:
@@ -11,7 +11,7 @@
  * 
  */
 
-//inclusion de la connexion a la base et la classe base de données
+//inclusion de la connexion a la base et la classe base de donnï¿½es
 include 'global_config.php';
 include 'modeles/bdd.class.php';
 
@@ -22,7 +22,7 @@ $bdd = new BDD();
 $commentaires = $bdd->select("SELECT commmentaire, valide FROM Livreor WHERE valide=0;");
 
 if(count($commentaires)!=0){
-	$subject="Commentaires non-validés";
+	$subject="Commentaires non-validï¿½s";
 	// Headers
 	$headers = 'From: Salon d\'Eugenie <serveur.messagerie@salondeugenie.com>'."\n";
 	$headers .= 'Content-Type: text/html;'."\n";
@@ -30,13 +30,13 @@ if(count($commentaires)!=0){
 	$headers .= "\n";
 	
 	$msg='<p>
-			Des commentaires ont été ajoutés dans le livre d\'or, vous devez les valider avant qu\'ils ne soient diffusé sur le site.
+			Des commentaires ont ï¿½tï¿½ ajoutï¿½s dans le livre d\'or, vous devez les valider avant qu\'ils ne soient diffusï¿½ sur le site.
 			<br/>
-			Pour cela connectez vous sur le site et validez les à cette adresse :
+			Pour cela connectez vous sur le site et validez les ï¿½ cette adresse :
 			<br/><br/>
-			<a href="#######" class="centrer">Salon d\'eugenie - Connexion</a>
+			<a href="'.queries("administrateur", "menu", array()).'" class="centrer">Salon d\'eugenie - Connexion</a>
 			<br/><br/>
-			Ceci est un mail automatique, merci de ne pas y répondre
+			Ceci est un mail automatique, merci de ne pas y rï¿½pondre
 		  </p>';
 	
 	

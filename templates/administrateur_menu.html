@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}Menu Administrateur{% endblock %}
+
+{% block content %}
+
+<div class="row">
+	<h1>Menu Administrateur</h1>
+</div>
+
+<div class="row">
+	<div class="span4 offset2">
+		<a href="{{ queries('administrateur','validation_commentaires',{}) }}">Valider les commentaires ajoutés</a>
+	</div>
+</div>
+
+
+{% endblock %}
