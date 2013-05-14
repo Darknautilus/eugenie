@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /docs/
+Disallow: /modeles/
+Disallow: /modules/
+Disallow: /twig/
