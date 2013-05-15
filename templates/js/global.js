@@ -102,6 +102,7 @@ $(document).ready(function() {
 				$(this).css("-webkit-animation","deplacement 30s linear infinite");
 				$(this).css("animation","deplacement 30s linear infinite");
 				$(this).attr("position", 2);
+				$(this).attr("title", "Voir la carte");
 				$(this).fadeIn("slow");
 			});
 		}
@@ -112,6 +113,7 @@ $(document).ready(function() {
 				$(this).css("-webkit-animation","none");
 				$(this).css("animation","none");
 				$(this).attr("position", 1);
+				$(this).attr("title", "Voir le salon");
 				$(this).fadeIn("slow");
 			});
 		}

@@ -94,6 +94,7 @@ nav a
 	position:relative;
   line-height:0.8;
   z-index:0;
+  font-size:1.3em;
 }
 nav a:hover
 {
@@ -226,6 +227,10 @@ header #mainLogo
 	color: #85530F;
 	text-align: center;
 }
+#content h1
+{
+	font-size: 3em;
+}
 
 .lettrine:first-letter
 {
@@ -329,14 +334,21 @@ html.intro, body.intro, .ecriture
 }
 body.intro
 {
-	padding:2%;
+	/*padding:3%;*/
+	text-align:center;
+}
+.introContent
+{
+	display:inline-block;
+	vartical-align:middle;
+	line-height:1.5;
+	padding-top:5%;
+	max-height:100%;
 }
 #content-row.intro
 {
   width:600px;
   height:435px;
-  
-  margin:auto;
 }
 #content.intro
 {
@@ -354,7 +366,6 @@ body.intro
 }
 .ecriture
 {
-	text-align:center;
 	font-family:English;
 	font-size:4em;
 }
