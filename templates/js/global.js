@@ -117,3 +117,49 @@ $(document).ready(function() {
 		}
 	});
 });
+
+
+$(document).ready(function() {
+
+	$(".formGererVisitesCaddie").submit(function(e) {
+		
+		
+	var form = $(this);
+	var idComm = $("#idComm").val();
+	var caddieMarkupLink = $(this).find("input[name='caddieMarkupLink']").val();
+	
+	$.ajax({
+	type: form.attr("method"),
+	            url: form.attr("action"),
+	            data: form.serialize(),
+	            
+	            // se que renvois le php au javascipt
+	            dataType: "json",
+	            success: function(data){
+	            alert("test");	
+	            if(data.modify == "deleted") {
+		             if(data.result) {
+		            	 form.parent().parent().remove();
+		             }
+		             else {
+		            	 
+		            	 form.parent().find(".alert").remove();
+		            	 form.parent().prepend("<p class=\"alert alert-danger alert-block\">Cette visite n'existe pas !</p>");
+		             }
+	             }
+	             else {
+		             if(data.result) {
+		             form.parent().html("<p class=\"alert alert-success alert-block\">Visite ajoutée avec la priorite "+data.priorite+"</p>");
+		             }
+		             else {
+		             form.parent().html("<p class=\"alert alert-block\">Visite déjà ajoutée avec la priorite "+data.priorite+"</p>");
+		             }
+	             }
+	            }
+	});
+	
+	// empeche d'appeler la page et met javascript en 1 pos
+	return false;
+	});
+
+	});

@@ -34,7 +34,8 @@ $MODULES = array(
 	  "administrateur" => array(
 	  		"connexion",
 	  		"menu",
-	  		"validation_commentaires"
+	  		"validation_commentaires",
+	  		"commentaire_gerer"
 	  	)
 	);
 
