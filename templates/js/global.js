@@ -126,17 +126,15 @@ $(document).ready(function() {
 		
 	var form = $(this);
 	var idComm = $("#idComm").val();
-	var caddieMarkupLink = $(this).find("input[name='caddieMarkupLink']").val();
-	
+	//var caddieMarkupLink = $(this).find("input[name='caddieMarkupLink']").val();
+	//alert(caddieMarkupLink);
 	$.ajax({
 	type: form.attr("method"),
 	            url: form.attr("action"),
 	            data: form.serialize(),
-	            
-	            // se que renvois le php au javascipt
 	            dataType: "json",
 	            success: function(data){
-	            alert("test");	
+
 	            if(data.modify == "deleted") {
 		             if(data.result) {
 		            	 form.parent().parent().remove();
@@ -158,8 +156,19 @@ $(document).ready(function() {
 	            }
 	});
 	
-	// empeche d'appeler la page et met javascript en 1 pos
 	return false;
 	});
 
 	});
+
+/*
+function deleteRowByNumber(pNomTable, pNumber)
+{
+	document.getElementById(pNomTable).deleteRow(pNumber);
+
+	for( i=pNumber+1 ; i<=document.getElementById(pNomTable).rows.length+1 ; i++)
+	{
+		document.getElementById(i).id=""+i-1;
+	}
+}
+*/

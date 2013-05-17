@@ -12,14 +12,12 @@ if(isset($_POST["filled"]) && isset($_POST["idComm"])) {
 	}
 	else {
 		// Cas d'une suppression
-			//DELETE FROM `eugenie`.`livreor` WHERE `livreor`.`idComm` = 1
-		var_dump("test2");
-			$bdd = new BDD();
+			/*$bdd = new BDD();
 			$error = "";
 			$bdd->delete("livreor", array("idComm"=>$_POST["idComm"]));
 			$bdd->close();
-			
-			echo json_encode(array("result" => false, "modify" => "deleted"));
+			*/
+			echo json_encode(array("result" => true, "modify" => "deleted"));
 		
 	}
 }
