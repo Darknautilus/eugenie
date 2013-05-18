@@ -1,6 +1,5 @@
 <?php
 
-
 // Initialisation class bdd
 $bdd = new BDD();
 

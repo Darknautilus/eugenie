@@ -12,9 +12,8 @@ private $bdd = NULL;
 private $lastError;
 private $tables;
 
-/*
- * Constructeur de la classe :
- * crée l'objet de connexion à la base
+/**
+ * Crée l'objet de connexion à la base
  */
 function __construct() {
 	try {
@@ -38,32 +37,44 @@ function __construct() {
 	}
 }
 
+/**
+ * 
+ * @return Ambigous <NULL, PDO> L'objet PDO correspondant à la connexion en cours
+ */
 function getBDD() {
 	return $this->bdd;
 }
 
+/**
+ * 
+ * @return string La dernière erreur relevée
+ */
 function getLastError() {
 	return $this->lastError;
 }
 
+/**
+ * 
+ * @return Ambigous <multitype:, mixed> La liste des tables de la base
+ */
 function getTables() {
   return $this->tables;
 }
 
-/*
- * Ferme la connexion et retourne les éventuelles erreurs survenues
+/**
+ * Ferme la connexion
+ * @return multitype: Les éventuelles erreurs survenues lors de la connexion
  */
 function close() {
 	$this->bdd = NULL;
 	return $this->errors;
 }
-	
-/*
- * Pour faire un SELECT sur la table.
- * Paramètres :
- * 		$requete : une requête SQL classique
- * 
- * Retourne le tableau des résultats. Chaque enregistrement est un élément du tableau et est présenté sous la forme d'un tableau associatif de la forme champ => valeur. 
+
+/**
+ * Effectue un SELECT sur la table.
+ * Chaque enregistrement est un élément du tableau de retour et est présenté sous la forme d'un tableau associatif de la forme champ => valeur.
+ * @param unknown $requete Une requête SQL classique
+ * @return boolean|multitype:mixed Le tableau des résultats.
  */
 function select ($requete) {
 	try {
@@ -94,14 +105,13 @@ function select ($requete) {
 	}
 }
 
-/*
+
+/**
  * Effectue un update sur une table.
- * Paramètres :
- * 		$table : la table où effectuer l'update
- * 		$colonnes : tableau associatif de la forme champ => valeur
- * 		$conditions : idem, conditions après le WHERE
- * 
- * Retourne true si l'update s'est fait correctement, et false sinon
+ * @param unknown $table La table où effectuer l'update
+ * @param unknown $colonnes Tableau associatif de la forme champ => valeur
+ * @param unknown $conditions idem, conditions après le WHERE
+ * @return boolean Retourne true si l'update s'est fait correctement, et false sinon
  */
 function update ($table, $colonnes, $conditions) {
 	
@@ -138,13 +148,11 @@ function update ($table, $colonnes, $conditions) {
 	}
 }
 
-/*
+/**
  * Supprime un enregistrement de la table
- * Paramètres :
- * 		$table : la table où supprimer l'enregistrement
- * 		$conditions : tableau associatif des conditions après le WHERE
- * 
- * Retourne true si la suppression s'est faite correctement, et false sinon
+ * @param unknown $table La table où supprimer l'enregistrement (attention à la casse)
+ * @param unknown $conditions Tableau associatif des conditions après le WHERE
+ * @return boolean Retourne true si la suppression s'est faite correctement, et false sinon
  */
 function delete ($table, $conditions) {
 	$conditions_ = array() ;
@@ -170,13 +178,12 @@ function delete ($table, $conditions) {
 	}
 }
  
-/*
+
+/**
  * Insère un élément dans la base
- * Paramètres :
- * 		$table : la table où insérer l'enregistrement
- * 		$valeurs : tableau associatif de la forme champ => valeur
- * 
- * Retourne l'id de l'élément inséré si l'insertion s'est faite correctement. Si l'insertion s'est faite correctement mais qu'on ne peut récupérer d'id, retourne 1. Sinon, retourne false.
+ * @param unknown $table La table où insérer l'enregistrement
+ * @param unknown $valeurs Tableau associatif de la forme champ => valeur
+ * @return number|string|boolean Retourne l'id de l'élément inséré si l'insertion s'est faite correctement. Si l'insertion s'est faite correctement mais qu'on ne peut récupérer d'id, retourne 1. Sinon, retourne false.
  */
 function insert ($table, $valeurs) {
 
@@ -232,6 +239,17 @@ function insert ($table, $valeurs) {
  * Si les paramètres $_field et $_value ne sont pas donnés, teste si la $_table existe (retourne true ou false).
  * Si un seul des deux paramètres $_field ou $_value est donné, retourne false.
  * Si $_field et $_value sont donnés, cherche l'élément correspondant et retourne true si trouvé et false sinon.
+ */
+/**
+ * Teste l'existence d'une table ou d'un élément d'une table
+ * 
+ * Si les paramètres $_field et $_value ne sont pas donnés, teste si la $_table existe (retourne true ou false).
+ * Si un seul des deux paramètres $_field ou $_value est donné, retourne false.
+ * Si $_field et $_value sont donnés, cherche l'élément correspondant et retourne true si trouvé et false sinon.
+ * @param unknown $_table La table à tester
+ * @param string $_field Le champ de la clé primaire de $_table
+ * @param string $_value La valeur de la clé primaire de l'élément recherché
+ * @return boolean|Ambigous <boolean, multitype:mixed, multitype:mixed >
  */
 function exists($_table, $_field = null, $_value = null) {
   if(($_field == null || $_value == null) && $_field != $_value) {

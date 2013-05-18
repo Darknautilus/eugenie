@@ -23,18 +23,20 @@
 	        <div class="offset1">{{ commentaire.commentaire }}</div>
 	      </td>
 	      <td>
-	      <form class="formGererVisitesCaddie" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}">
-	      	<button type="submit" class="btn btn-success"><i class="icon-ok icon-white"></i></button>
-	      </form>
+		      <form class="formGestionComm" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}">
+		        <input type="hidden" name="filled" value="true" />
+		        <input type="hidden" name="action" value="approve" />
+		        <input type="hidden" name="idCom" value="{{ commentaire.idComm }}" />
+	        	<button type="submit" class="btn btn-success"><i class="icon-ok icon-white"></i></button>
+		      </form>
 	      </td>
 	      <td>
-	      <form class="formGererVisitesCaddie" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}" >
-	      	<button type="submit" class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
-
-       				 <input type="hidden" id="idComm" name="idComm" value="{{ commentaire.idComm }}" />
-       				 <input type="hidden" id="filled" name="filled" value="true" />
-       				 <input type="hidden" name="delete" value ="true" />
-	      	</form>
+		      <form class="formGestionComm" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}" >
+						 <input type="hidden" name="filled" value="true" />
+						 <input type="hidden" name="action" value ="delete" />
+						 <input type="hidden" name="idCom" value="{{ commentaire.idComm }}" />
+		      	 <button type="submit" class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
+		      </form>
 	      </td>
       </tr>
     {% endfor %}
