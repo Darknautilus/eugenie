@@ -13,7 +13,7 @@
     	<strong>Voici les commentaires non validés :</strong>
 	<p>
  {% if commentaires is not empty %}
-  <table class="table table-hover">
+  <table class="table table-hover" id="table_commentaires">
 	<thead>
 		<th>Commentaires</th>
 	</thead>
@@ -23,10 +23,18 @@
 	        <div class="offset1">{{ commentaire.commentaire }}</div>
 	      </td>
 	      <td>
-	      	<button type="button" class="btn btn-success"><i class="icon-ok icon-white"></i></button>
+	      <form class="formGererVisitesCaddie" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}">
+	      	<button type="submit" class="btn btn-success"><i class="icon-ok icon-white"></i></button>
+	      </form>
 	      </td>
 	      <td>
-	      	<button type="button" class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
+	      <form class="formGererVisitesCaddie" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}" >
+	      	<button type="submit" class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
+
+       				 <input type="hidden" id="idComm" name="idComm" value="{{ commentaire.idComm }}" />
+       				 <input type="hidden" id="filled" name="filled" value="true" />
+       				 <input type="hidden" name="delete" value ="true" />
+	      	</form>
 	      </td>
       </tr>
     {% endfor %}

@@ -119,3 +119,58 @@ $(document).ready(function() {
 		}
 	});
 });
+
+
+$(document).ready(function() {
+
+	$(".formGererVisitesCaddie").submit(function(e) {
+		
+		
+	var form = $(this);
+	var idComm = $("#idComm").val();
+	//var caddieMarkupLink = $(this).find("input[name='caddieMarkupLink']").val();
+	//alert(caddieMarkupLink);
+	$.ajax({
+	type: form.attr("method"),
+	            url: form.attr("action"),
+	            data: form.serialize(),
+	            dataType: "json",
+	            success: function(data){
+
+	            if(data.modify == "deleted") {
+		             if(data.result) {
+		            	 form.parent().parent().remove();
+		             }
+		             else {
+		            	 
+		            	 form.parent().find(".alert").remove();
+		            	 form.parent().prepend("<p class=\"alert alert-danger alert-block\">Cette visite n'existe pas !</p>");
+		             }
+	             }
+	             else {
+		             if(data.result) {
+		             form.parent().html("<p class=\"alert alert-success alert-block\">Visite ajoutée avec la priorite "+data.priorite+"</p>");
+		             }
+		             else {
+		             form.parent().html("<p class=\"alert alert-block\">Visite déjà ajoutée avec la priorite "+data.priorite+"</p>");
+		             }
+	             }
+	            }
+	});
+	
+	return false;
+	});
+
+	});
+
+/*
+function deleteRowByNumber(pNomTable, pNumber)
+{
+	document.getElementById(pNomTable).deleteRow(pNumber);
+
+	for( i=pNumber+1 ; i<=document.getElementById(pNomTable).rows.length+1 ; i++)
+	{
+		document.getElementById(i).id=""+i-1;
+	}
+}
+*/
