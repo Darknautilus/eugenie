@@ -12,63 +12,65 @@
   <h1>Livre d'or</h1>
 </div>
 <div class="row-fluid">
- 	<p>
-    	<strong>Voici ce qu'on pense de chez nous :</strong>
+ 	<p class="span6 offset3">
+	 	<strong>Faites-nous part de votre expÃ©rience</strong><br/>
+	 	Si vous avez apprÃ©ciÃ© le Salon, ou que vous trouvez que certains points auraient pu Ãªtre mieux, faites-le nous savoir, et nous en tiendrons compte.
 	<p>
- {% if commentaires is not empty %}
-  <table class="table table-hover">
-	<thead>
-		<th>Commentaires</th>
-	</thead>
-    {% for commentaire in commentaires %}
-      <tr>
-	      <td>
-	        <div class="offset1">{{ commentaire.commentaire }}</div>
-	      </td>
-      </tr>
-    {% endfor %}
-  </table>
-  {% else %}
-  <p><em>Il n'y a aucun groupe Ã  afficher</em></p>
-  {% endif %}
 </div>
 
-<br />
-
-<div class="row-fluid centrer">
-   <strong>Vous êtes venus chez nous ?<br /> Dites-nous ce que vous en avez pensé :</strong> <br/><br />
+<div class="row-fluid">
+  <div class="span8 offset2">
 	
-	<!-- Si jamais il y a une erreur lors de l'appel du commentaire -->
-	{% if errors is not empty %}
-	    <div class="alert alert-error span9 centrer">
-	    	<button type="button" class="close" data-dismiss="alert">&times;</button>
-	    	<strong>Attention</strong> {{ errors[0] }}.
-	    </div>
-	{% endif %}
-	
-	{% if errors is not empty %}
+		<!-- Si jamais il y a une erreur lors de l'appel du commentaire -->
+		{% if errors is not empty %}
+		<div class="alert alert-error">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Erreur : </strong>
+			<ul>
+			  {% for error in errors %}
+			  <li>{{ error }}</li>
+			  {% endfor %}
+			</ul>
+		 </div>
+		{% elseif success %}
 		<div class="alert alert-success">
-		    <button type="button" class="close" data-dismiss="alert">&times;</button>
-		    <strong>Enregistré !</strong> C'est bon le commentaire a bien été enregistré.
-	    </div>
-    {% endif %}
+		   <button type="button" class="close" data-dismiss="alert">&times;</button>
+		   <strong>Merci !</strong> Votre commentaire a bien Ã©tÃ© enregistrÃ©, il sera publiÃ© aprÃ¨s validation.
+		</div>
+		{% endif %}
     
-   <!-- Formulaire pour les commentaires pour le livre d'or -->
-   <form method="post" action="{{ queries('index','livredor',{}) }}">
-   <!-- ici on écrit le commentaire dans le textarea, un code javascript permet de limiter le nombre de caractères à 250 -->
-	   <textarea 
-	   	class="field span5" rows="3" cols="50" name=commentaire
-	   	placeholder="Saisissez votre commentaire"
-	   	onKeyDown="countAreaChars(this.form.commentaire,this.form.leftChars,250);"
-		onKeyUp="countAreaChars(this.form.commentaire,this.form.leftChars,250);"></textarea> 		
-		<br />
-		<!-- Ici on affiche le nombre de caractères restant dans le textarea -->
-		<input type=text name=leftChars readonly size=3 maxlength=3 value="250"> caractères restants		
-		<br />
-		
-		<input type="submit" class="btn" value="Envoyer votre commentaire">
-	</form>
+		<!-- Formulaire pour les commentaires pour le livre d'or -->
+		<form class="commentForm" method="post" action="{{ queries('index','livredor',{}) }}">
+			<!-- ici on Ã©crit le commentaire dans le textarea, un code javascript permet de limiter le nombre de caractÃ¨res Ã  250 -->
+			<textarea class="commentText span12" maxChar="250" rows="3" cols="200" name="commentaire" placeholder="Saisissez votre commentaire">{{ commentaire }}</textarea> 			
+			<br />
+			<div class="pull-right">
+			 <span class="commentCharCount">250</span>
+			 <input type="submit" class="btn" value="Envoyer votre commentaire" />
+			</div>
+		</form>
+	</div>
 </div>
-
+<hr/>
+<div class="row-fluid">
+  <div class="span8 offset2">
+		{% if commentaires is not empty %}
+		<table class="table table-hover">
+		  <thead>
+		    <th>Commentaires</th>
+			</thead>
+		  {% for commentaire in commentaires %}
+		  <tr>
+			  <td>
+			    <div class="offset1">{{ commentaire.commentaire }}</div>
+			  </td>
+		  </tr>
+		  {% endfor %}
+		</table>
+		{% else %}
+		<p><em>Il n'y a aucun commentaire Ã  afficher</em></p>
+		{% endif %}
+  </div>
+</div>
 
 {% endblock %}

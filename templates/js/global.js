@@ -49,48 +49,6 @@ $(document).ready(function() {
 	updateHeader();
 });
 
-/*$(document).ready(function () {
-    var firstLink = $(".side-menu > li:first-child > a");
-    var menuLink = $(".side-menu > li > a");
-    var firstLoadedHtml = firstLink.attr("href");
-
-    $("#sectionContainer").hide().load(firstLoadedHtml).fadeIn("fast");
-    firstLink.addClass("active");   
-
-    menuLink.click(function(e) {
-
-        e.preventDefault();
-        e.stopImmediatePropagation();
-
-        var newLoadedHtml = $(this).attr("href");
-
-        $.history.pushState(null, newLoadedHtml, newLoadedHtml);
-
-        $("#sectionContainer")
-            .hide()
-            .load(newLoadedHtml, function(responseText) {
-                document.title = $(responseText).filter("title").text();
-            })
-            .fadeIn("fast");
-    });
-
-    $.history.Adapter.bind(window, "statechange", function() {
-        menuLink.removeClass("active");
-        $("a[href='" + $.History.getState().title + "']").addClass("active");
-        $('#sectionContainer').load(document.location.href, function(responseText) {
-            document.title = $(responseText).filter("title").text();
-        }); 
-    });
-});*/
-
-// Fonction qui permet de calculer le nombre de caract�res d'un textarea
-function countAreaChars(areaName,counter,limit)
-{
-	if (areaName.value.length>limit)
-	areaName.value=areaName.value.substring(0,limit);
-	else
-	counter.value = limit - areaName.value.length;
-}
 
 // Pour le changement d'image dans l'intro
 $(document).ready(function() {
@@ -147,5 +105,21 @@ $(document).ready(function() {
 	        }
 		});
 		return false;
+	});
+});
+
+$(document).ready(function() {
+	$(".commentCharCount").html($(".commentText").attr("maxChar") - $(".commentText").val().toString().length);
+	$(".commentText").bind('input propertychange', function() {
+		var max = $(this).attr("maxChar");
+		var count = $(this).val().toString().length;
+		var charLeft = max - count;
+		$(".commentCharCount").html(charLeft);
+		if(charLeft < 0) {
+			$(".commentCharCount").css("color","red");
+		}
+		else {
+			$(".commentCharCount").css("color","black");
+		}
 	});
 });
