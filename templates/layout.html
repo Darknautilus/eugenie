@@ -76,7 +76,11 @@
   <div class="offset2">
 		<ul>
 		  <li><a class="unstyled" href="#">Mentions légales</a></li>
+		  {% if isLogged() %}
+		  <li><a class="unstyled" href="{{ queries('administrateur','menu',{}) }}">Administration</a></li>
+		  {% else %}
 		  <li><a class="unstyled" href="{{ queries('administrateur','connexion',{}) }}">Connexion</a></li>
+		  {% endif %}
 		</ul>
 	</div>
 </div>

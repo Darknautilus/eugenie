@@ -95,3 +95,4 @@
 	$twig->addFunction("bootstrap", new Twig_Function_Function("bootstrap"));
 	$twig->addFunction("fontAwesome", new Twig_Function_Function("fontAwesome"));
 	$twig->addFunction("getFiles", new Twig_Function_Function("getFiles"));
+	$twig->addFunction("isLogged", new Twig_Function_Function("isLogged"));

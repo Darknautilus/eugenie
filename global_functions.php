@@ -12,15 +12,6 @@ function majGlobals() {
   else {
     $GLOBALS["logged"] = false;
   }
-
-  if($GLOBALS["logged"]) {
-    if(!isset($_SESSION["grpMb"])) {
-      majGrpMb();
-      majGrpMbPlus();
-    }
-  $GLOBALS["grpMb"] = $_SESSION["grpMb"];
-  $GLOBALS["grpMbPlus"] = $_SESSION["grpMbPlus"];
-  }
 }
 majGlobals();
 
@@ -56,36 +47,6 @@ function getCookie($name) {
   }  
 }
 
-function majGrpMb() {
-	$bdd = new BDD();
-	$buffer = $bdd->select("select o.grp from Own o
-									where o.member = ".$GLOBALS["membinfos"]["membid"].";");
-	$grpMb = array();
-	if($buffer) {
-		foreach($buffer as $line) {
-			$grpMb[] = $line["grp"];
-		}
-	}
-	$_SESSION["grpMb"] = $grpMb;
-	
-	$bdd->close();
-}
-
-function majGrpMbPlus() {
-	$bdd = new BDD();
-	$buffer = $bdd->select("select o.grp from Own o
-									where o.member = ".$GLOBALS["membinfos"]["membid"]." AND
-									o.grnt = 2");
-	$grpMbPlus = array();
-	if($buffer) {
-		foreach($buffer as $line) {
-			$grpMbPlus[] = $line["grp"];
-		}
-	}
-	$_SESSION["grpMbPlus"] = $grpMbPlus;
-
-	$bdd->close();
-}
 
 function envoyerMail($adresseDest,$objet,$message)
 {
@@ -93,6 +54,6 @@ function envoyerMail($adresseDest,$objet,$message)
   $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
   $headers .= 'From: Admin TocTOAC <moi@mail.fr>' . "\r\n";
 
-  mail($adresseDest, "[TocTOAC]".$objet, $message, $headers);
+  mail($adresseDest, "[Salon Eugénie]".$objet, $message, $headers);
 }
 

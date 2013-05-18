@@ -122,7 +122,6 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-
 	$(".formGestionComm").submit(function(e) {
 		var form = $(this);
 		$.ajax({
@@ -150,15 +149,3 @@ $(document).ready(function() {
 		return false;
 	});
 });
-
-/*
-function deleteRowByNumber(pNomTable, pNumber)
-{
-	document.getElementById(pNomTable).deleteRow(pNumber);
-
-	for( i=pNumber+1 ; i<=document.getElementById(pNomTable).rows.length+1 ; i++)
-	{
-		document.getElementById(i).id=""+i-1;
-	}
-}
-*/

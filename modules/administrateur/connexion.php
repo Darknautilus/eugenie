@@ -1,6 +1,5 @@
 <?php
 
-$redirect = false;
 $errors = array();
 $values = array();
 
@@ -22,7 +21,7 @@ if(isset($_POST["filled"]) && !isLogged()) {
 		// On teste la présence de l'email dans la base
 		$bdd = new BDD();
 		
-		$membre = $bdd->select('select * from administrateur where identifiant="'.$values["email"].'";');
+		$membre = $bdd->select('select idAdmin, identifiant, mdp from administrateur where identifiant="'.$values["email"].'";');
 		$bdd->close();
 
 		if(!$membre) {
@@ -46,15 +45,8 @@ if(isset($_POST["filled"]) && !isLogged()) {
 			creerCookie("logged", true);
 			creerCookie("membinfos",$membre[0]);
 		}
-
-
 		// On redirige
-		//$redirect = true;
 		header("Location:".queries("administrateur", "menu", array()));
 	}
 }
-
-if($redirect)
-	echo $twig->render("index_show.html", array());
-else
-	echo $twig->render("administrateur_connexion.html", array("values" => $values, "errors" =>  $errors));
+echo $twig->render("administrateur_connexion.html", array("values" => $values, "errors" =>  $errors));
