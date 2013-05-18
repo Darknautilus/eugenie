@@ -2,8 +2,6 @@
 
 if(isset($_POST["filled"]) && isset($_POST["idComm"])) {
 	
-	var_dump("test");
-	
 	if(isset($_POST["modify"])) {
 		// Cas d'une modification
 		if($priorite == false) {
