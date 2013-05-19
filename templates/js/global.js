@@ -107,19 +107,3 @@ $(document).ready(function() {
 		return false;
 	});
 });
-
-$(document).ready(function() {
-	$(".commentCharCount").html($(".commentText").attr("maxChar") - $(".commentText").val().toString().length);
-	$(".commentText").bind('input propertychange', function() {
-		var max = $(this).attr("maxChar");
-		var count = $(this).val().toString().length;
-		var charLeft = max - count;
-		$(".commentCharCount").html(charLeft);
-		if(charLeft < 0) {
-			$(".commentCharCount").css("color","red");
-		}
-		else {
-			$(".commentCharCount").css("color","black");
-		}
-	});
-});

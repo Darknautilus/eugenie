@@ -47,6 +47,38 @@ function getCookie($name) {
   }  
 }
 
+function setAntispam() {
+  $nb1 = rand(1, 10);
+  $nb2 = rand(1, 10);
+  $signes = array("+", "-", "x");
+  $signe = rand(0,2);
+  $_SESSION["antiSpamNb1"] = $nb1;
+  $_SESSION["antiSpamNb2"] = $nb2;
+  $_SESSION["antiSpamSigne"] = hash_password($signe);
+  return $signes[$signe];
+}
+function controlAntispam($result) {
+  // Signe +
+  if(check_password(0, $_SESSION["antiSpamSigne"]))
+  {
+    return ($_SESSION["antiSpamNb1"] + $_SESSION["antiSpamNb2"]) == $result;
+  }
+  // Signe -
+  else if(check_password(1, $_SESSION["antiSpamSigne"]))
+  {
+    return ($_SESSION["antiSpamNb1"] - $_SESSION["antiSpamNb2"]) == $result;
+  }
+  // Signe *
+  else if(check_password(2, $_SESSION["antiSpamSigne"]))
+  {
+    return ($_SESSION["antiSpamNb1"] * $_SESSION["antiSpamNb2"]) == $result;
+  }
+  else
+  {
+    return false;
+  }
+}
+
 
 function envoyerMail($adresseDest,$objet,$message)
 {

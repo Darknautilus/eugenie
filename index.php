@@ -4,6 +4,7 @@
  Initialisation des sessions
 */
 session_start();
+srand();
 
 /*
 	Gestion des redirections URL
@@ -32,6 +33,7 @@ include_once("./loadTwig.php");
 /*
  Inclusion des modèles cruciaux
 */
+include_once (PATH_MODELES."/security.php");;
 include_once (PATH_MODELES."/bdd.class.php");
 include_once ("./global_functions.php");
 
