@@ -13,25 +13,23 @@
     	<strong>Voici les commentaires non validés :</strong>
 	<p>
  {% if commentaires is not empty %}
-  <table class="table table-hover" id="table_commentaires">
+  <table class="table table-hover" style="table-layout:fixed;" id="table_commentaires">
 	<thead>
 		<th>Commentaires</th>
 	</thead>
     {% for commentaire in commentaires %}
       <tr>
-	      <td>
-	        <div class="offset1">{{ commentaire.commentaire }}</div>
+	      <td style="word-wrap:break-word;">
+	        {{ commentaire.commentaire }}
 	      </td>
 	      <td>
-		      <form class="formGestionComm" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}">
+		      <form style="display:inline-block;" class="formGestionComm" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}">
 		        <input type="hidden" name="filled" value="true" />
 		        <input type="hidden" name="action" value="approve" />
 		        <input type="hidden" name="idCom" value="{{ commentaire.idComm }}" />
 	        	<button type="submit" class="btn btn-success"><i class="icon-ok icon-white"></i></button>
 		      </form>
-	      </td>
-	      <td>
-		      <form class="formGestionComm" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}" >
+		      <form style="display:inline-block;" class="formGestionComm" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}" >
 						 <input type="hidden" name="filled" value="true" />
 						 <input type="hidden" name="action" value ="delete" />
 						 <input type="hidden" name="idCom" value="{{ commentaire.idComm }}" />
