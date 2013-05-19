@@ -18,6 +18,8 @@
 	<p>
 </div>
 
+{% if not isLogged() %}
+
 <div class="row-fluid">
   <div class="span10 offset1">
 	
@@ -58,17 +60,33 @@
 	</div>
 </div>
 <hr/>
+
+{% endif %}
+
 <div class="row-fluid">
   <div class="span10 offset1">
 		{% if commentaires is not empty %}
-		<table class="table table-hover">
+		<table class="table table-hover" style="table-layout:fixed;">
 		  <thead>
 		    <th>Commentaires</th>
 			</thead>
 		  {% for commentaire in commentaires %}
 		  <tr>
-			  <td>
-			    <div>{{ commentaire.commentaire }}</div>
+			  <td class="row-fluid">
+		     {% if isLogged() %}
+		     <div class="pull-right">
+		      <form class="formGestionComm" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}" >
+             <input type="hidden" name="filled" value="true" />
+             <input type="hidden" name="action" value ="delete" />
+             <input type="hidden" name="idCom" value="{{ commentaire.idComm }}" />
+		         de <strong>{{ commentaire.mail }}</strong>
+             <input type="submit" class="btn btn-danger" value="x">
+          </form>
+		     </div>
+			   <div class="span9" style="word-wrap:break-word;">
+			     &laquo; {{ commentaire.commentaire }} &raquo;
+			   </div>
+		     {% endif %}
 			  </td>
 		  </tr>
 		  {% endfor %}

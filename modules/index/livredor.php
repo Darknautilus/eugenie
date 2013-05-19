@@ -30,8 +30,16 @@ if(isset($_POST['commentaire']))
 	}
 	else
 	{
+	  if(empty($_POST["email"]))
+	  {
+	    $email = "Anonyme";
+	  }
+	  else
+	  {
+	    $email = $_POST["email"];
+	  }
 		// insertion dans la base
-		$participation = $bdd->insert("LivreOr", array("commentaire" => $_POST['commentaire'], "valide" => "0"));
+		$participation = $bdd->insert("LivreOr", array("commentaire" => $_POST['commentaire'], "mail" => $email, "valide" => "0"));
 		if(!$participation)
 		{
 			$errors[] = "Erreur insertion : LivreOr";
@@ -53,6 +61,6 @@ $antiSpam = $_SESSION["antiSpamNb1"]." ".$signe." ".$_SESSION["antiSpamNb2"];
  * On récupère tous les commentaires validés pour les mettre dans un tableau
  * 
  */
-$commentaires = $bdd->select("SELECT commentaire FROM LivreOr WHERE valide = 1;");
+$commentaires = $bdd->select("SELECT idComm, commentaire, mail FROM LivreOr WHERE valide = 1;");
 
-echo $twig->render("index_livredor.html", array("async" => $async, "success" => $success, "errors" => $errors, "commentaire" => $commentaire, "commentaires"=>$commentaires, "antiSpam" => $antiSpam));
+echo $twig->render("index_livredor.html", array("async" => $async, "success" => $success, "errors" => $errors, "commentaire" => $commentaire, "commentaires" => $commentaires, "antiSpam" => $antiSpam));
