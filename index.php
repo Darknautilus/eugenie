@@ -1,6 +1,11 @@
 <?php
 
 /*
+ Initialisation des sessions
+*/
+session_start();
+
+/*
 	Gestion des redirections URL
 	Pour enregistrer une page où rediriger : rajouter le paramètre GET &redirect=true
 */
@@ -20,15 +25,16 @@ include_once("./global_config.php");
 include_once("./queries.php");
 
 /*
+	Initialisation du moteur de templates
+*/
+include_once("./loadTwig.php");
+
+/*
  Inclusion des modèles cruciaux
 */
 include_once (PATH_MODELES."/bdd.class.php");
 include_once ("./global_functions.php");
 
-/*
-	Initialisation du moteur de templates
-*/
-include_once("./loadTwig.php");
 								
 /*
 	Désactivation des guillemets magiques
@@ -46,12 +52,6 @@ if(get_magic_quotes_gpc())
 $_POST = array_map("htmlspecialchars", $_POST);
 $_GET = array_map("htmlspecialchars", $_GET);
 $_COOKIE = array_map("htmlspecialchars", $_COOKIE);
-
-/*
- Initialisation des sessions
-*/
-
-session_start();
 
 /*
 	Démarrage de la temporisation de sortie

@@ -3,6 +3,7 @@
 $errors = array();
 $values = array();
 
+
 // Si l'on a rempli le formulaire et qu'on est pas loggué
 if(isset($_POST["filled"]) && !isLogged()) {
 	// Controles de surface
@@ -36,15 +37,14 @@ if(isset($_POST["filled"]) && !isLogged()) {
 	}
 	// On définit les variables de session
 	if(empty($errors)) {
-		 
 		$_SESSION["logged"] = true;
 		$_SESSION["membinfos"] = $membre[0];
-		$GLOBALS["membinfos"] = $membre[0];
 
 		if(isset($_POST["cookie"])) {
 			creerCookie("logged", true);
 			creerCookie("membinfos",$membre[0]);
 		}
+		majGlobals();
 		// On redirige
 		header("Location:".queries("administrateur", "menu", array()));
 	}
