@@ -35,7 +35,8 @@ $MODULES = array(
 	  		"connexion",
 	  		"menu",
 	  		"validation_commentaires",
-	  		"commentaire_gerer"
+	  		"commentaire_gerer",
+	      "deconnexion"
 	  	)
 	);
 
