@@ -309,11 +309,6 @@ footer a:hover
 	text-decoration:none;
 }
 
-textarea
-{
-	background-color:#CECECE;
-}
-
 #myCarousel{
 	border-radius:10px 10px 10px 10px;
 }
@@ -377,6 +372,15 @@ body.intro
 .ecriture a:hover
 {
 	text-decoration:inherit;
+}
+
+.introMainText
+{
+	color:#FFF7ED;
+	position:fixed;
+	top:0;
+	left:0;
+	width:200px;
 }
 
 
