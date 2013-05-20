@@ -4,4 +4,4 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']))
 else
   $async = false;
 
-echo $twig->render("index_patisseries.html", array("async" => $async));
+echo $twig->render("main_menus.html", array("async" => $async));

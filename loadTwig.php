@@ -46,9 +46,16 @@
 	}
 	
 	function queries($module, $action, $param) {
-		$query = root()."/index.php?module=".$module."&action=".$action;
+		//$query = root()."/index.php?module=".$module."&action=".$action;
+		$query = root();
+		if(!empty($module))
+		  $query .= "/".$module;
+		if(!empty($action))
+		  $query .= "/".$action.".php";
+		if(!empty($param))
+		  $query .= "?";
 		foreach($param as $key => $value) {
-			$query .= "&".$key."=".$value;
+			$query .= $key."=".$value."&";
 		}
 		return $query;
 	}

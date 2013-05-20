@@ -63,4 +63,4 @@ $antiSpam = $_SESSION["antiSpamNb1"]." ".$signe." ".$_SESSION["antiSpamNb2"];
  */
 $commentaires = $bdd->select("SELECT idComm, commentaire, mail FROM LivreOr WHERE valide = 1;");
 
-echo $twig->render("index_livredor.html", array("async" => $async, "success" => $success, "errors" => $errors, "commentaire" => $commentaire, "commentaires" => $commentaires, "antiSpam" => $antiSpam));
+echo $twig->render("main_livredor.html", array("async" => $async, "success" => $success, "errors" => $errors, "commentaire" => $commentaire, "commentaires" => $commentaires, "antiSpam" => $antiSpam));

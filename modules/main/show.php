@@ -5,4 +5,4 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']))
 else
   $async = false;
 
-echo $twig->render("index_show.html", array("async" => $async ));
+echo $twig->render("main_show.html", array("async" => $async ));

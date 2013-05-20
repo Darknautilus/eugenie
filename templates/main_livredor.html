@@ -42,7 +42,7 @@
 		{% endif %}
     
 		<!-- Formulaire pour les commentaires pour le livre d'or -->
-		<form class="commentForm" method="post" action="{{ queries('index','livredor',{}) }}">
+		<form class="commentForm" method="post" action="{{ queries('main','livredor',{}) }}">
 			<!-- ici on écrit le commentaire dans le textarea, un code javascript permet de limiter le nombre de caractères à 250 -->
 			<textarea class="commentText span12" maxChar="250" rows="3" cols="200" name="commentaire" placeholder="Saisissez votre commentaire">{{ commentaire }}</textarea> 			
 			<br />
@@ -75,7 +75,7 @@
 			  <td class="row-fluid">
 		     {% if isLogged() %}
 		     <div class="pull-right">
-		      <form class="formGestionComm" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}" >
+		      <form class="formGestionComm" method="post" action="{{ queries('administrateur','commentaireGerer',{}) }}" >
              <input type="hidden" name="filled" value="true" />
              <input type="hidden" name="action" value ="delete" />
              <input type="hidden" name="idCom" value="{{ commentaire.idComm }}" />

@@ -4,4 +4,4 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']))
 else
   $async = false;
 
-echo $twig->render("index_contact.html", array("async" => $async));
+echo $twig->render("main_galerie.html", array("async" => $async));

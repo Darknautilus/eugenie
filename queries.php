@@ -3,14 +3,14 @@
 /*
 	Module affiché par défaut
 */
-define("DEFAULT_MODULE", "index");
+define("DEFAULT_MODULE", "main");
 
 /*
 	Action par défaut pour chaque module
 	array(module => action)
 */
 $DEFAULT_ACTION = array(
-	"index" => "intro"
+	"main" => "intro"
 );
 
 $GLOBALS["DEFAULT_ACTION"] = $DEFAULT_ACTION;
@@ -20,7 +20,7 @@ $GLOBALS["DEFAULT_ACTION"] = $DEFAULT_ACTION;
 	array(module => array(action [,action...]) )
 */
 $MODULES = array(
-	"index" => array(
+	"main" => array(
 	  "show",
 	  "menus",
 	  "thes",
@@ -34,8 +34,8 @@ $MODULES = array(
 	  "administrateur" => array(
 	  		"connexion",
 	  		"menu",
-	  		"validation_commentaires",
-	  		"commentaire_gerer",
+	  		"validationCommentaires",
+	  		"commentaireGerer",
 	      "deconnexion"
 	  	)
 	);

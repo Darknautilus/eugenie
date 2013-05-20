@@ -60,6 +60,7 @@ $_COOKIE = array_map("htmlspecialchars", $_COOKIE);
 */
 ob_start();
 
+
 if(!isset($_GET["module"]) || !is_module($_GET["module"]))
 	$module = default_module();
 else

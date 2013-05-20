@@ -1,0 +1,14 @@
+SetEnv PHP_VER 5_TEST
+SetEnv REGISTER_GLOBALS 0
+
+Indexignore *
+
+# Le serveur doit suivre les liens symboliques :
+Options +FollowSymlinks
+
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+
+# Regle de test à utiliser avec le fichier test.html
+# RewriteRule ^foo.html$ /test.html [L]
+RewriteRule ^([a-zA-Z]*)/([a-zA-Z]*).php$ /index.php?module=$1&action=$2

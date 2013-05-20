@@ -23,13 +23,13 @@
 	        {{ commentaire.commentaire }}
 	      </td>
 	      <td>
-		      <form style="display:inline-block;" class="formGestionComm" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}">
+		      <form style="display:inline-block;" class="formGestionComm" method="post" action="{{ queries('administrateur','commentaireGerer',{}) }}">
 		        <input type="hidden" name="filled" value="true" />
 		        <input type="hidden" name="action" value="approve" />
 		        <input type="hidden" name="idCom" value="{{ commentaire.idComm }}" />
 	        	<button type="submit" class="btn btn-success"><i class="icon-ok icon-white"></i></button>
 		      </form>
-		      <form style="display:inline-block;" class="formGestionComm" method="post" action="{{ queries('administrateur','commentaire_gerer',{}) }}" >
+		      <form style="display:inline-block;" class="formGestionComm" method="post" action="{{ queries('administrateur','commentaireGerer',{}) }}" >
 						 <input type="hidden" name="filled" value="true" />
 						 <input type="hidden" name="action" value ="delete" />
 						 <input type="hidden" name="idCom" value="{{ commentaire.idComm }}" />
