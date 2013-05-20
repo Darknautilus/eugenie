@@ -10,7 +10,8 @@ define("DEFAULT_MODULE", "main");
 	array(module => action)
 */
 $DEFAULT_ACTION = array(
-	"main" => "intro"
+	"main" => "intro",
+  "administrateur" => "menu"
 );
 
 $GLOBALS["DEFAULT_ACTION"] = $DEFAULT_ACTION;

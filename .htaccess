@@ -11,4 +11,7 @@ RewriteEngine on
 
 # Regle de test à utiliser avec le fichier test.html
 # RewriteRule ^foo.html$ /test.html [L]
+RewriteRule ^$ / [L]
+RewriteRule ^([a-zA-Z]*)/([a-zA-Z]*)$ /index.php?module=$1 [L]
+RewriteRule ^([a-zA-Z]*)$ /index.php?module=$1 [L]
 RewriteRule ^([a-zA-Z]*)/([a-zA-Z]*).php$ /index.php?module=$1&action=$2
